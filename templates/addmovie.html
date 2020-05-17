@@ -1,0 +1,67 @@
+{% extends 'base.html' %} 
+{% block content %}
+<section>
+  <div class="container">
+ <h3 class="center ">Add Movie</h3>
+
+    <form  action="{{ url_for('insert_movie') }}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix ">create</i>
+                <input id="movie_name" name="movie_name" type="text" class="validate">
+                <label for="icon_prefix">Movie name</label>
+            </div>
+       </div>
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="movie_description" id="movie_description" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Movie Description</label>
+            </div>
+         </div> 
+
+        <div class="row">
+            <div class="input-field col s12">
+            <i class="material-icons prefix">art_track</i>
+             <select id="category" name="category_name">
+               <option value="" disabled selected>Choose</option>
+               {% for cat in categories%}
+               <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+               {% endfor %}
+             </select>
+               <label>Select genre of movie</label>
+            </div>
+      </div>
+      <div class="row">
+           <div class="input-field col s12">
+              <strong><p>Rating</p></strong>
+               <p class="range-field">
+               <input type="range" name="movie_rating" id="movie_rating"  min="0" max="100" />
+               </p>
+           </div>
+      </div>
+
+      <div class="row ">
+        <div class="col s12">
+          Insert Image URL here:
+          <div class="input-field inline">
+            <input id="img_url" name="img_url" type="url" class="validate">
+            <label for="email_inline">URL</label>
+            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          </div>
+        </div>
+    </div>
+      
+      </div>
+      <div class="row center-align">
+       <div class="col s12">
+         <button class="btn waves-effect waves-light pulse" type="submit" name="action">Submit
+           <i class="material-icons right">playlist_add</i>
+         </button>
+         </div>
+       </div>
+    </form>
+
+</div>
+</section>
+{% endblock %}

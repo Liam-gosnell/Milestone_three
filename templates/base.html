@@ -1,5 +1,6 @@
+
 <html>
-  <head>
+ <head>
   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -10,12 +11,12 @@
  <body>
   
      <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+    <div class="nav-wrapper black">
+      <a href="{{ url_for('index') }}" class="brand-logo">CinematicBASE</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{{url_for('login')}}">Login</a></li>
-        <li><a href="mobile.html">Signup</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Signup</a></li>
       </ul>
     </div>
   </nav>
@@ -35,6 +36,7 @@
         $(document).ready(function(){
              $('select').formSelect();
               $('.sidenav').sidenav();
+              
              });
 
   
