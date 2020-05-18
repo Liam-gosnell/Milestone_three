@@ -1,21 +1,21 @@
 
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
-
-.long-movie-image{
-    padding-top: 60px;
-    height: 500px!important;
-    align-content: left;
+/* view movie page */
+.materialboxed{
+  
+    padding-top: 60px!important;
 }
 
-.text-for-image{
-    padding-left: 100px;
-    padding-top: 80px;
+.movie-description{
+    padding-top: 20px!important;
 }
 
-
-
+.movie-tag-details{
+    padding-top: 40px!important;
+}
 
