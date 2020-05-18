@@ -1,70 +1,63 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block content %}
 
- {% block content %} 
+<!-- Page Content -->
+<div class="container">
 
- <section>
- <div class="container">
-  <div class="view-movie-layout">
-    <div class="view-movie">
-        <div class="movie body">
-          <div class="row">
-            <div class="col s12 m6 movie-img">
-              <img class="materialboxed" width="350" src="{{ url_for('static', filename='images/film.jpg') }}">
-              <div class="text-under-img">
-              <p>RATING:</p>
-              <p>
-              78
-              </p>
-              <p>DIRECTOR:</p>
-              <p>
-              Mr. George Film
-              </p>
-              <p>LENGTH:</p>
-              <p>
-              1 hr 90mins
-              </p>
-              <div class="movie-likes">
-                 
-                 <p>This movie has 22 likes.</p>
+  <!-- Portfolio Item Heading -->
+  <h3 class="my-4">Movie Name
+    <small>Directed by:</small>
+  </h3>
 
-                 <button class="btn waves-effect waves-light movie-btn" type="submit" name="action">Like Movie
-                    <i class="material-icons right">playlist_add</i>
-                 </button>
-               </div> 
-               </div>
-            </div>
-            
-            <div class="col s12 m6 movie-description">
-              <div class="movie-title">
-                  <h3>
-                    Movie Name:
-                  </h3>
-                   <p class="movie-director">
-                    by - Movie director
-                  </p>
-              </div>
-               <div class="movie-description-small">
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                  Praesentium nulla deleniti, atque expedita beatae sunt obcaecati voluptas at corrupti. 
-                  Officiis sed deserunt animi sequi facere exercitationem. Beatae voluptates consequatur mollitia.
-               </div>
-               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-              Mollitia eveniet esse possimus odio et ipsa dolores asperiores saepe dolorem maxime nisi impedit 
-               molestiae sint sequi natus voluptatem consectetur, alias inventore cupiditate reprehenderit officia 
-              dolorum porro! Quisquam quia molestiae natus tempore sequi repellendus consectetur ipsa perferendis itaque. 
-              Architecto id nobis ea.
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-             Mollitia eveniet esse possimus odio et ipsa dolores asperiores saepe dolorem maxime nisi impedit 
-            </p>
-            </div>
+  <!-- Portfolio Item Row -->
+  <div class="row">
 
-          </div>
-        </div>
-        
+    <div class="col-md-6">
+      <img class="img-fluid" src="{{ url_for('static', filename='images/popcorn.jpeg') }}" alt="">
     </div>
- </div>
- </div>
- </section>
 
+    <div class="col-md-6">
+      <h4 class="my-3">About The movie:</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
+       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
+       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
+       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
+       </p>
+      
+      
+        <h5>Rating:</h5>
+        <p>
+        8/10
+        </p>
+        <h5>Director:</h5>
+        <p>
+        mr.ici .mornci
+        </p>
+        <h5>Running Time:</h5>
+        <p>
+        1hr40mins
+        </p>
+        <h5>Genre</h5>
+        <p>
+        Comedy-Action-Drama
+        </p>
+      
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  
+
+  
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
 
 {% endblock %}

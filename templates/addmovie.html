@@ -8,25 +8,25 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">create</i>
-                <input id="movie_name" name="movie_name" type="text" class="validate">
+                <input id="movie_name" name="movie_name" type="text" class="validate text-white">
                 <label for="icon_prefix">Movie name</label>
             </div>
        </div>
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="movie_description" id="movie_description" class="materialize-textarea"></textarea>
+                <textarea name="movie_description" id="movie_description" class="materialize-textarea text-white"></textarea>
                 <label for="icon_telephone">Movie Description</label>
             </div>
          </div> 
 
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 ">
             <i class="material-icons prefix">art_track</i>
              <select id="category" name="category_name">
-               <option value="" disabled selected>Choose</option>
+               <option  value="" disabled selected>Choose</option>
                {% for cat in categories%}
-               <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+               <option class="text-white" value="{{cat.category_name}}">{{cat.category_name}}</option>
                {% endfor %}
              </select>
                <label>Select genre of movie</label>
@@ -52,7 +52,7 @@
         </div>
     </div>
       
-      </div>
+     
       <div class="row center-align">
        <div class="col s12">
          <button class="btn waves-effect waves-light pulse" type="submit" name="action">Submit
@@ -60,6 +60,16 @@
          </button>
          </div>
        </div>
+       <div class="row center-align">
+       <div class="col s12">
+       <a href="{{ url_for('index') }}">
+         <button class="btn waves-effect waves-light ">Back to Home
+           <i class="material-icons right">apps</i>
+         </button>
+         </a>
+         </div>
+       </div>
+       
     </form>
 
 </div>

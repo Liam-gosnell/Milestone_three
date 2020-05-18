@@ -24,19 +24,19 @@
         <div class="card-content">
      
           <span class="card-title activator grey-text text-darken-4">
-            {{movie.movie_name}}
+     {{movie.movie_name}}
             <i class="material-icons right">more_vert</i></span>
           <p><a href="{{ url_for('view_movie') }}">Here for more</a></p>
-        </div>
-        <div class="card-reveal">
+         </div>
+         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">
-            {{movie.category_name}}
+     {{movie.category_name}}
             <i class="material-icons right">close</i></span>
-          <p>
-            {{movie.movie_description}} -  {{movie.movie_rating}} 
+          <p class="text-dark">
+     {{movie.movie_description}} Rating-  {{movie.movie_rating}} 
           </p>
         </div>
-      </div>
+       </div>
      {% endfor %}
       </section>
     </div>
@@ -45,7 +45,7 @@
  </div>
 
  <div class="container">
-    <div class="row center-align">
+    <div class="row text-center">
 
         <a href="{{ url_for('add_movie') }}">
         <button class="btn waves-effect waves-light " type="submit" name="action">Add movie
