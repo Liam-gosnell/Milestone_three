@@ -26,7 +26,7 @@
           <span class="card-title activator grey-text text-darken-4">
      {{movie.movie_name}}
             <i class="material-icons right">more_vert</i></span>
-          <p><a href="{{ url_for('view_movie') }}">Here for more</a></p>
+          <p><a href="{{ url_for('view_movie',movie_id=movie._id) }}">Read More</a></p>
          </div>
          <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">

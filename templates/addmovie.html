@@ -8,25 +8,39 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">create</i>
-                <input id="movie_name" name="movie_name" type="text" class="validate text-white">
+                <input id="movie_name" name="movie_name" type="text" class="validate ">
                 <label for="icon_prefix">Movie name</label>
+            </div>
+       </div>
+       <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix ">videocam</i>
+                <input id="movie_director" name="movie_director" type="text" class="validate ">
+                <label for="icon_prefix">Directed by:</label>
+            </div>
+       </div>
+       <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix ">keyboard</i>
+                <input id="movie_writer" name="movie_writer" type="text" class="validate ">
+                <label for="icon_prefix">Writen by:</label>
             </div>
        </div>
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="movie_description" id="movie_description" class="materialize-textarea text-white"></textarea>
+                <textarea name="movie_description" id="movie_description" class="materialize-textarea "></textarea>
                 <label for="icon_telephone">Movie Description</label>
             </div>
          </div> 
 
         <div class="row">
             <div class="input-field col s12 ">
-            <i class="material-icons prefix">art_track</i>
+            <i class="material-icons prefix">assignment_ind</i>
              <select id="category" name="category_name">
                <option  value="" disabled selected>Choose</option>
                {% for cat in categories%}
-               <option class="text-white" value="{{cat.category_name}}">{{cat.category_name}}</option>
+               <option class="" value="{{cat.category_name}}">{{cat.category_name}}</option>
                {% endfor %}
              </select>
                <label>Select genre of movie</label>
@@ -40,6 +54,20 @@
                </p>
            </div>
       </div>
+      <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix ">star</i>
+                <input id="movie_stars" name="movie_stars" type="text" class="validate ">
+                <label for="icon_prefix">Movie Stars:</label>
+            </div>
+       </div>
+       <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix ">access_time</i>
+                <input id="movie_time" name="movie_time" type="text" class="validate ">
+                <label for="icon_prefix">Movie time:</label>
+            </div>
+       </div>
 
       <div class="row ">
         <div class="col s12">
@@ -60,7 +88,9 @@
          </button>
          </div>
        </div>
-       <div class="row center-align">
+    </form>
+
+    <div class="row center-align">
        <div class="col s12">
        <a href="{{ url_for('index') }}">
          <button class="btn waves-effect waves-light ">Back to Home
@@ -69,8 +99,6 @@
          </a>
          </div>
        </div>
-       
-    </form>
 
 </div>
 </section>

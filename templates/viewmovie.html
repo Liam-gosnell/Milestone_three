@@ -2,52 +2,54 @@
 
 <!-- Page Content -->
 <div class="container">
-
-  <!-- Portfolio Item Heading -->
-  <h3 class="my-4">Movie Name
-    <small>Directed by:</small>
-  </h3>
+  
+     <!-- Portfolio Item Heading -->
+        <h3 class="my-4">
+     {{movie.movie_name}}
+      <small>Written by:
+      {{movie.movie_writer}}
+      </small>
+        </h3>
 
   <!-- Portfolio Item Row -->
   <div class="row">
-
     <div class="col-md-6">
-      <img class="img-fluid" src="{{ url_for('static', filename='images/popcorn.jpeg') }}" alt="">
+      <img
+        class="img-fluid"
+        src="{{  movie.img_url  }}"
+        alt=""
+      />
     </div>
 
     <div class="col-md-6">
-      <h4 class="my-3">About The movie:</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
-       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
-       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-       Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, 
-       adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.
-       </p>
-      
-      
-        <h5>Rating:</h5>
-        <p>
-        8/10
-        </p>
-        <h5>Director:</h5>
-        <p>
-        mr.ici .mornci
-        </p>
-        <h5>Running Time:</h5>
-        <p>
-        1hr40mins
-        </p>
-        <h5>Genre</h5>
-        <p>
-        Comedy-Action-Drama
-        </p>
-      
-    </div>
+      <h5 class="my-3">
+         Info:
+      </h5>
+      <p>
+        {{movie.movie_description}}
+      </p>
 
+      <h5>Rating:</h5>
+      <p>
+        {{movie.movie_rating}}
+      </p>
+      <h5>Director:</h5>
+      <p>
+        {{movie.movie_director}}
+      </p>
+      <h5>Running Time:</h5>
+      <p>
+        {{movie.movie_time}}
+      </p>
+      <h5>Genre:</h5>
+      <p>
+        {{movie.category_name}}
+      </p>
+      <h5>Stars:</h5>
+      <p>
+      {{movie.movie_stars}}
+      </p>
+    </div>
   </div>
   <!-- /.row -->
 
@@ -56,31 +58,27 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">subject</i>
+          <i class="material-icons prefix">subject</i>
           <textarea id="textarea1" class="materialize-textarea"></textarea>
           <label for="textarea1">Comment on this movie</label>
         </div>
       </div>
     </form>
   </div>
-
-  
-
-  
   <!-- /.row -->
-
+ 
 </div>
 <!-- /.container -->
 
-<div class="container center">
-    <div class="row text-center">
-
-        <a href="{{ url_for('add_movie') }}">
-        <button class="btn waves-effect waves-light " type="submit" name="action">Add movie
-           <i class="material-icons right">playlist_add</i>
-         </button>
-        </a> 
-       </div>
- </div>
+<div class="container">
+  <div class="row center-align">
+    <a href="{{ url_for('add_movie') }}">
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Add to favourites
+        <i class="material-icons right">favorite_border</i>
+      </button>
+    </a>
+  </div>
+</div>
 
 {% endblock %}
