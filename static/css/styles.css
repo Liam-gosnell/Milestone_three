@@ -1,6 +1,32 @@
+body{
+    
+}
+
+.bg-index{
+   background: url('../images/wave1.jpeg') no-repeat center center fixed ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.bg-view{
+background: url('../images/.jpeg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 
 
+.nav-color{
+    background: #024249;
+}
+
+.base{
+    color: #00a1ab;
+}
 
 .wrapper {
   display: grid;
