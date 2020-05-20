@@ -2,35 +2,35 @@
 {% block content %}
 <section>
   <div class="container">
- <h3 class="center ">Add Movie</h3>
+ <h3 class="center ">Edit Movie</h3>
 
-    <form  action="{{ url_for('insert_movie') }}" method="POST" class="col s12">
+    <form action="{{ url_for('update_movie', movie_id=movie._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">create</i>
-                <input id="movie_name" name="movie_name" type="text" class="validate ">
+                <input id="movie_name" name="movie_name" type="text" class="validate" value="{{movie.movie_name}}">
                 <label for="icon_prefix">Movie name</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">videocam</i>
-                <input id="movie_director" name="movie_director" type="text" class="validate ">
+                <input id="movie_director" name="movie_director" type="text" class="validate" value="{{movie.movie_director}}"> 
                 <label for="icon_prefix">Directed by:</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">keyboard</i>
-                <input id="movie_writer" name="movie_writer" type="text" class="validate ">
+                <input id="movie_writer" name="movie_writer" type="text" class="validate " value="{{movie.movie_writer}}">
                 <label for="icon_prefix">Writen by:</label>
             </div>
        </div>
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="movie_description" id="movie_description" class="materialize-textarea "></textarea>
-                <label for="icon_telephone">Movie Description</label>
+                <textarea name="movie_description" id="movie_description"  class="materialize-textarea " >{{movie.movie_description}}</textarea>
+                <label for="icon_telephone" >Movie Description</label>
             </div>
          </div> 
 
@@ -40,7 +40,12 @@
              <select id="category" name="category_name">
                <option  value="" disabled selected>Choose</option>
                {% for cat in categories%}
-               <option class="" value="{{cat.category_name}}">{{cat.category_name}}</option>
+                {% if cat.category_name == movie.category_name%}
+                 <option class="" value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                 {% else %}
+                 <option class="" value="{{cat.category_name}}"  >{{cat.category_name}}</option>
+                {% endif %}
+
                {% endfor %}
              </select>
                <label>Select genre of movie</label>
@@ -50,21 +55,21 @@
            <div class="input-field col s12">
               <strong><p>Rating</p></strong>
                <p class="range-field">
-               <input type="range" name="movie_rating" id="movie_rating"  min="0" max="100" />
+               <input type="range" name="movie_rating" id="movie_rating" value="{{movie.movie_rating}}"   min="0" max="100" />
                </p>
            </div>
       </div>
       <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">star</i>
-                <input id="movie_stars" name="movie_stars" type="text" class="validate ">
+                <input id="movie_stars" name="movie_stars" type="text" value="{{movie.movie_stars}}" class="validate ">
                 <label for="icon_prefix">Movie Stars:</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">access_time</i>
-                <input id="movie_time" name="movie_time" type="text" class="validate ">
+                <input id="movie_time" name="movie_time" type="text" value="{{movie.movie_time}}" class="validate ">
                 <label for="icon_prefix">Movie time:</label>
             </div>
        </div>
@@ -73,7 +78,7 @@
         <div class="col s12">
           Insert Image URL here:
           <div class="input-field inline">
-            <input id="img_url" name="img_url" type="url" class="validate">
+            <input id="img_url" name="img_url" type="url" class="validate" value="{{movie.img_url}}">
             <label for="email_inline">URL</label>
             <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
@@ -83,8 +88,8 @@
      
       <div class="row center-align">
        <div class="col s12">
-         <button class="btn waves-effect waves-light pulse" type="submit" name="action">Add Movie
-           <i class="material-icons right">playlist_add</i>
+         <button class="btn waves-effect waves-light pulse" type="submit" name="action">Update
+           <i class="material-icons right">fiber_new</i>
          </button>
          </div>
        </div>
@@ -93,7 +98,7 @@
     <div class="row ">
        <div class="col s12">
        <a href="{{ url_for('index') }}">
-         <button class="btn waves-effect waves-light ">Back to Home
+         <button class="btn waves-effect waves-light ">Back to Movie
            <i class="material-icons right">apps</i>
          </button>
          </a>

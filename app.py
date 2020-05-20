@@ -36,6 +36,29 @@ def view_movie(movie_id):
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     return render_template('viewmovie.html', movie=movie)
 
+@app.route('/edit_movie/<movie_id>')
+def edit_movie(movie_id):
+    movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('edittask.html', movie=movie, categories=all_categories)
+
+@app.route('/update_movie/<movie_id>', methods=['POST'])
+def update_movie(movie_id):
+    movie = mongo.db.movies
+    movie.update( {'_id': ObjectId(movie_id)},
+    {
+        'movie_name':request.form.get('movie_name'),
+        'movie_director':request.form.get('movie_director'),
+        'movie_writer':request.form.get('movie_writer'),
+        'movie_description': request.form.get('movie_description'),
+        'category_name':request.form.get('category_name'),
+        'movie_rating': request.form.get('movie_rating'),
+        'movie_stars': request.form.get('movie_stars'),
+        'movie_time': request.form.get('movie_time'),
+        'img_url': request.form.get('img_url')
+    })
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

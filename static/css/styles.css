@@ -2,6 +2,8 @@ body{
     
 }
 
+/*backgrounds*/
+
 .bg-index{
    background: url('../images/wave1.jpeg') no-repeat center center fixed ; 
   -webkit-background-size: cover;
@@ -18,7 +20,7 @@ background: url('../images/.jpeg') no-repeat center center fixed;
   background-size: cover;
 }
 
-
+/* nav */
 
 .nav-color{
     background: #024249;
@@ -41,4 +43,10 @@ small{
 .img-fluid{
     height: 80vh;
     width: auto;
+}
+
+/*images*/
+
+.card .card-image img{
+    height: 460px;
 }
