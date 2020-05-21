@@ -55,8 +55,15 @@ def update_movie(movie_id):
         'movie_rating': request.form.get('movie_rating'),
         'movie_stars': request.form.get('movie_stars'),
         'movie_time': request.form.get('movie_time'),
-        'img_url': request.form.get('img_url')
+        'img_url': request.form.get('img_url'),
+        'movie_trailer': request.form.get('movie_trailer')
+
     })
+    return redirect(url_for('index'))
+
+@app.route('/delete_movie/<movie_id>')
+def delete_movie(movie_id):
+    mongo.db.movies.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('index'))
 
 
