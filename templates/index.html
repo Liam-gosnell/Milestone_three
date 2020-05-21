@@ -26,12 +26,14 @@
           <span class="card-title activator grey-text text-darken-4">
      {{movie.movie_name}}
             <i class="material-icons right">more_vert</i></span>
-
+            <hr>
+          
           <a href="{{ url_for('view_movie',movie_id=movie._id) }}">
           <button class="btn waves-effect waves-light " type="submit" name="action">Info&Trailer
            <i class="material-icons right">fast_forward</i>
          </button>
           </a>
+          
 
          </div>
          <div class="card-reveal">

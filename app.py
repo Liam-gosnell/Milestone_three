@@ -40,7 +40,7 @@ def view_movie(movie_id):
 def edit_movie(movie_id):
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('edittask.html', movie=movie, categories=all_categories)
+    return render_template('editmovie.html', movie=movie, categories=all_categories)
 
 @app.route('/update_movie/<movie_id>', methods=['POST'])
 def update_movie(movie_id):
@@ -65,6 +65,13 @@ def update_movie(movie_id):
 def delete_movie(movie_id):
     mongo.db.movies.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('index'))
+
+
+@app.route('/favourites')
+def favourites():
+    return render_template('favourites.html', 
+                           movies=mongo.db.movies.find())
+
 
 
 if __name__ == '__main__':
