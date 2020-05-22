@@ -1,6 +1,10 @@
 body{
     
 }
+.row{
+    margin-bottom: 0;
+}
+
 
 /* home */
 .masthead {
@@ -12,6 +16,16 @@ body{
   background-repeat: no-repeat;
   
 }
+
+/* login */
+
+
+
+/* profile */
+.img-circle{
+    height: 50vh;
+}
+
 
 /*backgrounds*/
 
