@@ -1,32 +1,36 @@
 {% extends 'base.html' %} 
 
  {% block content %} 
- <br><br>
-<div class="container-fluid well span6 center">
-	<div class="row-fluid">
-        <div class="span2" >
-		    <img src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" class="img-circle">
-        </div>
-        
-        <div class="span8">
-            <h3>{{g.user.username}}'s Profile</h3>
-            <h6>You are user number #{{g.user.id}}
+
+
+<header class="masthead-1">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="font-weight-dark text-light">
+        {{g.user.username}}'s Profile
+        </h1>
+       <h6 class="text-light">You are user number #{{g.user.id}}
             </h6>
-           
-            
-        </div>
+        <a href="{{url_for('index')}}">
+        <button class="btn waves-effect waves-light " > All movies here!
+          <i class="material-icons right">arrow_forward</i>
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
         
-        <div class="row ">
-       <div class="col s12">
-       <a href="{{ url_for('index') }}">
-         <button class="btn waves-effect waves-light ">Movies
-           <i class="material-icons right">apps</i>
-         </button>
-         </a>
-         </div>
-       </div>
-</div>
-</div>
+        
+        
+        
+        
+        
+        
+        
+        
+
  
  
 {% endblock %}
