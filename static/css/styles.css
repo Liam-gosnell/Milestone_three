@@ -32,6 +32,15 @@ body{
 /* login */
 
 
+/* search */
+.search-bar{
+    background: #000;
+    color: #fff!important;
+
+}
+
+
+
 
 /* profile */
 .img-circle{
@@ -78,7 +87,7 @@ small{
 }
 
 .img-fluid{
-    height: 80vh;
+    
     width: auto;
 }
 

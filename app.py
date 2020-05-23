@@ -122,6 +122,7 @@ def delete_movie(movie_id):
     return redirect(url_for('index'))
 
 
+
 @app.route('/favourites')
 def favourites():
     return render_template('favourites.html')
