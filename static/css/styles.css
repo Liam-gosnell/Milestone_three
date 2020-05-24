@@ -96,3 +96,26 @@ small{
 .card .card-image img{
     height: 460px;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+ .card .card-image img{
+    height: 380px!important;
+}
+}
+
+/* footer */
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}

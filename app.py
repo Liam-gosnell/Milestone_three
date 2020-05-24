@@ -127,6 +127,11 @@ def delete_movie(movie_id):
 def favourites():
     return render_template('favourites.html')
 
+@app.route('/add_favourite/<movie_id>', methods=['GET','POST'])
+def add_favourite(movie_id):
+    movies =  mongo.db.movies
+    favourites.insert_one(request.form.to_dict())
+    return redirect(url_for('favourites'))
 
 
 

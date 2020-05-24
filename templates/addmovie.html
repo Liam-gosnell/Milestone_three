@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% block content %}
+<div class="h-100">
 <section>
   <div class="container">
  <h3 class="center ">Add Movie</h3>
@@ -39,7 +40,7 @@
             <i class="material-icons prefix">assignment_ind</i>
              <select id="category" name="category_name">
                <option  value="" disabled selected>Choose</option>
-               {% for cat in categories%}
+               {% for cat in categories %}
                <option class="" value="{{cat.category_name}}">{{cat.category_name}}</option>
                {% endfor %}
              </select>
@@ -113,4 +114,5 @@
 
 </div>
 </section>
+</div>
 {% endblock %}
