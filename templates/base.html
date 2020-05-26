@@ -13,6 +13,7 @@
   </head>
 
  <body>
+ <!-- Navbar -->
   <div class="navbar-fixed">
      <nav>
     <div class="nav-wrapper navbar-fixed-top  nav-color black">
@@ -25,12 +26,13 @@
         <li><a href="{{url_for('home')}}">Home</a></li>
         <li><a href="{{url_for('index')}}">Movies</a></li>
         <li><a href="{{url_for('login')}}">Login</a></li>
+        
         <li><a href="{{url_for('profile')}}">Profile</a></li>
       </ul>
     </div>
   </nav>
   </div>
-
+<!-- Navbar mobile -->
   <ul class="sidenav" id="mobile-demo">
    
    <li><a href="{{url_for('home')}}">Home</a></li>
@@ -39,7 +41,8 @@
         <li><a href="{{url_for('profile')}}">Profile</a></li>
         <li><a href="{{url_for('index')}}">Movies</a></li>
   </ul>
-      
+  <!-- /.Navbar mobile -->
+      <!-- /.Navbar -->
       {% block content %}
 
       {% endblock %}

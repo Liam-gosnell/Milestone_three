@@ -86,7 +86,9 @@
 <!-- /.container -->
 
   <!-- Favourite movie -->
+  
 <div class="container">
+ <!--
   <div class="row center-align mb-3 mt-3">
      <div class="col-12">
      <a href="{{ url_for('index') }}">
@@ -97,10 +99,11 @@
      </a>
      </div>
   </div>
+  -->
   <!-- /.Favourite movie -->
 
     <!-- Delete movie-->
-  <div class="row center-align mb-3">
+  <div class="row center-align mb-3 mt-3">
      <div class="col-12 btn-bottom">
      <a href="{{ url_for('delete_movie', movie_id=movie._id) }}">
       <button class="btn  #d50000 red accent-4 waves-effect waves-light" type="submit" name="action">

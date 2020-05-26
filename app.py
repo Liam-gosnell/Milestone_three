@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, session, request, url_for, g
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from random import randint
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User:
@@ -18,6 +19,10 @@ users = []
 users.append(User(id=1, username='Anthony', password='password'))
 users.append(User(id=2, username='Becca', password='secret'))
 users.append(User(id=3, username='Carlos', password='somethingsimple'))
+
+"""
+app config
+"""
 
 app = Flask(__name__)
 app.secret_key = 'somesecretkeythatonlyiknow'
@@ -66,6 +71,7 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('profile.html')
+
 
 
 @app.route('/index')
@@ -132,9 +138,8 @@ def search_movie():
 @app.route('/search_result')
 def search_result():
     movie_name = request.args.get('query')
-    result = db.stores.create_index( { movie_name: "Superbad", movie_id: ObjectId("5ebbb1781042e58ad5156fc8") } )
-    db.stores.find( { "$text": { "$search": "Superbad" } } )
-    return render_template('searchresult.html', result=result)
+    results = mongo.db.movies.find({"movies" : {"$regex":  movie_name}})
+    return render_template('searchresult.html', results=results)
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

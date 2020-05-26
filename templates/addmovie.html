@@ -1,10 +1,12 @@
 {% extends 'base.html' %} 
 {% block content %}
+
+<!-- Add Moive form -->
 <div class="h-100">
 <section>
   <div class="container">
  <h3 class="center ">Add Movie</h3>
-
+  <!-- Add Moive name -->
     <form  action="{{ url_for('insert_movie') }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
@@ -13,6 +15,7 @@
                 <label for="icon_prefix">Movie name</label>
             </div>
        </div>
+       <!-- Add Moive director -->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">videocam</i>
@@ -20,6 +23,7 @@
                 <label for="icon_prefix">Directed by:</label>
             </div>
        </div>
+       <!-- Add Moive writer -->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">keyboard</i>
@@ -27,6 +31,7 @@
                 <label for="icon_prefix">Writen by:</label>
             </div>
        </div>
+       <!-- Add Moive description -->
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -34,7 +39,7 @@
                 <label for="icon_telephone">Movie Description</label>
             </div>
          </div> 
-
+          <!-- Add Moive category -->
         <div class="row">
             <div class="input-field col s12 ">
             <i class="material-icons prefix">assignment_ind</i>
@@ -47,6 +52,7 @@
                <label>Select genre of movie</label>
             </div>
       </div>
+      <!-- Add Moive rating -->
       <div class="row">
            <div class="input-field col s12">
               <strong><p>Rating</p></strong>
@@ -55,6 +61,7 @@
                </p>
            </div>
       </div>
+      <!-- Add Moive stars -->
       <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">star</i>
@@ -62,6 +69,7 @@
                 <label for="icon_prefix">Movie Stars:</label>
             </div>
        </div>
+       <!-- Add Moive time -->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">access_time</i>
@@ -69,7 +77,7 @@
                 <label for="icon_prefix">Movie time:</label>
             </div>
        </div>
-
+       <!-- Add Moive image -->
       <div class="row ">
         <div class="col s12">
           Copy Large portrait image address :
@@ -80,7 +88,7 @@
           </div>
         </div>
     </div>
-
+   <!-- Add Moive trailer -->
 <div class="row ">
         <div class="col s12">
           Youtube embed src"" for trailer:
@@ -91,7 +99,8 @@
           </div>
         </div>
     </div>
-    
+      
+      <!-- Submit button -->
      
       <div class="row center-align">
        <div class="col s12">
@@ -101,7 +110,7 @@
          </div>
        </div>
     </form>
-
+  <!-- Back to movies -->
     <div class="row ">
        <div class="col s12 mb-3">
        <a href="{{ url_for('index') }}">
@@ -115,4 +124,5 @@
 </div>
 </section>
 </div>
+<!-- ./Add Moive form -->
 {% endblock %}
