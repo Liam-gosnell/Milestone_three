@@ -4,7 +4,7 @@
 <section class="bg-view">
 <div class="container ">
   
-     <!-- Portfolio Item Heading -->
+     <!-- View movies Heading -->
         <h4 class="my-4">
      {{movie.movie_name}}
       <small>Written by:
@@ -12,7 +12,7 @@
       </small>
         </h4>
 
-  <!-- Portfolio Item Row -->
+  <!-- Movie Item Row -->
   <div class="row ">
     <div class="col-md-6">
       <img
@@ -57,7 +57,9 @@
       </p>
     </div>
   </div>
-   
+  <!-- /.Movie Item Row -->
+
+     <!-- Edit Moive -->
    <div class="row align-center">
   <div class="col-12 mt-5 center">
      
@@ -69,29 +71,35 @@
           
   </div>
   </div>
+ <!-- /.Edit Moive -->
 
+   <!-- Movie trailer -->
 
   <div class="col-12 mt-5">
       <iframe width="100%" height="500px" src="{{movie.movie_trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-  <!-- /.row -->
+  <!-- /.Movie trailer -->
 
   
  
 </div>
 <!-- /.container -->
 
+  <!-- Favourite movie -->
 <div class="container">
   <div class="row center-align mb-3 mt-3">
      <div class="col-12">
-     <a href="{{ url_for('favourites') }}">
-      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">
+     <a href="{{ url_for('index') }}">
+      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action" method="POST">
         Add to favourites
         <i class="material-icons right">favorite_border</i>
       </button>
      </a>
      </div>
   </div>
+  <!-- /.Favourite movie -->
+
+    <!-- Delete movie-->
   <div class="row center-align mb-3">
      <div class="col-12 btn-bottom">
      <a href="{{ url_for('delete_movie', movie_id=movie._id) }}">
@@ -103,6 +111,9 @@
      </a>
      </div>
   </div>
+  <!-- /.Delete movie-->
+
+    <!-- Back button -->
   <div class="row ">
        <div class="col s12 mb-3">
        <a href="{{ url_for('index') }}">
@@ -112,6 +123,7 @@
          </a>
          </div>
        </div>
+ <!-- /.Back button -->
 </div>
 </section>
 

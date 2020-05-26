@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, session, request, url_for, g, session, abort
+from flask import Flask, render_template, redirect, session, request, url_for, g, session, abort, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from random import randint
+
 
 class User:
     def __init__(self, id, username, password):
@@ -121,19 +122,19 @@ def delete_movie(movie_id):
     mongo.db.movies.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('index'))
 
+@app.route('/search_movie')
+def search_movie():
+    movie_name = request.args.get('query')
+    query = request.args.get('query')
+    movie = mongo.db.movies.find_one({'movie_name': movie_name })
+    return render_template('index.html', movie=movie)
 
-
-@app.route('/favourites')
-def favourites():
-    return render_template('favourites.html')
-
-@app.route('/add_favourite/<movie_id>', methods=['GET','POST'])
-def add_favourite(movie_id):
-    movies =  mongo.db.movies
-    favourites.insert_one(request.form.to_dict())
-    return redirect(url_for('favourites'))
-
-
+@app.route('/search_result')
+def search_result():
+    movie_name = request.args.get('query')
+    result = db.stores.create_index( { movie_name: "Superbad", movie_id: ObjectId("5ebbb1781042e58ad5156fc8") } )
+    db.stores.find( { "$text": { "$search": "Superbad" } } )
+    return render_template('searchresult.html', result=result)
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
