@@ -41,9 +41,47 @@ A live demo can be found [here]().
 
 #### user stories
 
-* As a non frequent movie watcher..
+* As a non movie enthusiast..
   1. As a user, I want quick access to a variety of movies
   1. As a user, I want to be able to find movies that are rated well
   1. As a user, I want to be able to save the movies that I have enjoyed
+
+* As a movie enthusiast...
+  1. As a user, I want quick access to a variety of movies
+  1. As a user, I want to see information about the movie (such as movie plot) at a glance
+  1. As a user, I want to be able to share my knowledge by easily adding my own movies to the site
+  1. As a user, I want to be able to manage my movies, editing them or deleting them as necessary
+  1. As a user, I want to be able to save my favourite movies and access them quickly
+
+
+### Scope
+
+<p>In order to create a good UX Cinematic BASE..<p>
+
+* be developed with a mobile-first approach in order to suit any movie enthusiast
+* be responsive in order to display across a range of devices
+* be intuitive and provide feedback to the user on their actions
+* should feature a cohesive design which promotes the Cinematic BASE brand
+* will have a simple search
+* will be functional to any user, whether logged in or not
+
+### Wireframes
+
+
+
+# Features
+
+### Existing Features
+
+#### Navigation bar/ Side menu
+
+<p>I used Materialize to create a minimalist navigation bar that would toggle a side menu on mobile/tablet devices. 
+A user should not have to use the browser's back-button as the navigation bar is fixed.<p>
+
+#### Hero Image
+
+<p>I set the body element a fixed background image on all devices as it creates a modern/ professional 
+touch and adds credibility to the site. <p>
+
 
 
