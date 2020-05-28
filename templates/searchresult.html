@@ -7,7 +7,7 @@
  
  <!-- Search -->
  
- <form class="form-inline d-flex justify-content-center mb-0 md-form form-sm mt-0" name="movie_name" action="/search_movie" method="GET">
+ <form class="form-inline d-flex justify-content-center mb-0 md-form form-sm mt-0" name="movie_name" action="{{ url_for('search_movie') }}" method="POST">
   <i class="fas fa-search" aria-hidden="true"></i>
   <input name="movie_name" class="form-control text-light form-control-sm ml-3 w-75" type="text" placeholder="Search"
     aria-label="Search">
@@ -40,21 +40,21 @@
   <div class="row">
     <div class="col s12 z-depth-5">
      <section class="wrapper">
-     {% for movie in movies %}
+     
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img
             class="activator"
-            src="{{ movie.img_url }}"/>
+            src="{{ results.img_url }}"/>
         </div>
         <div class="card-content">
      
           <span class="card-title activator grey-text text-darken-4">
-     {{movie.movie_name}}
+     {{results.movie_name}}
             <i class="material-icons right">more_vert</i></span>
             <hr>
           
-          <a href="{{ url_for('view_movie',movie_id=movie._id) }}">
+          <a href="{{ url_for('view_movie',movie_id=results._id) }}">
           <button class="btn waves-effect waves-light " type="submit" name="action">Info&Trailer
            <i class="material-icons right">fast_forward</i>
          </button>
@@ -64,14 +64,14 @@
          </div>
          <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">
-     {{movie.category_name}}
+     {{results.category_name}}
             <i class="material-icons right">close</i></span>
           <p class="text-dark">
-     {{movie.movie_description}} Rating-  {{movie.movie_rating}} 
+     {{results.movie_description}} Rating-  {{results.movie_rating}} 
           </p>
         </div>
        </div>
-     {% endfor %}
+     
      <!-- ./Moive info -->
       </section>
 {% endblock %}

@@ -128,12 +128,14 @@ def delete_movie(movie_id):
     mongo.db.movies.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('index'))
 
-@app.route('/search_movie')
+@app.route("/search_movie", methods=['POST'] )
 def search_movie():
-    movie_name = request.args.get('movie_name')
-    results = mongo.db.movies.find({ "movie_name": { "$regex": results } })
-    print(movie_name)
-    return render_template('searchresult.html', results=results)  
+    search_term = request.form["movie_name"] 
+    movie_name = search_term.title()
+    results = mongo.db.movies.find_one({"movie_name": movie_name})
+    return render_template('searchresult.html', results=results) 
+    
+
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

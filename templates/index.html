@@ -7,7 +7,7 @@
  
  <!-- Search -->
  
- <form class="form-inline d-flex justify-content-center mb-0 md-form form-sm mt-0" name="movie_name" action="/search_movie" method="GET">
+ <form class="form-inline d-flex justify-content-center mb-0 md-form form-sm mt-0" name="movie_name" action="{{ url_for('search_movie') }}" method="POST">
   <i class="fas fa-search" aria-hidden="true"></i>
   <input name="movie_name" class="form-control text-light form-control-sm ml-3 w-75" type="text" placeholder="Search"
     aria-label="Search">
