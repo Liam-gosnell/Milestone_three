@@ -130,16 +130,10 @@ def delete_movie(movie_id):
 
 @app.route('/search_movie')
 def search_movie():
-    movie_name = request.args.get('query')
-    query = request.args.get('query')
-    movie = mongo.db.movies.find_one({'movie_name': movie_name })
-    return render_template('index.html', movie=movie)
-
-@app.route('/search_result')
-def search_result():
-    movie_name = request.args.get('query')
-    results = mongo.db.movies.find({"movies" : {"$regex":  movie_name}})
-    return render_template('searchresult.html', results=results)
+    movie_name = request.args.get('movie_name')
+    results = mongo.db.movies.find({ "movie_name": { "$regex": results } })
+    print(movie_name)
+    return render_template('searchresult.html', results=results)  
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

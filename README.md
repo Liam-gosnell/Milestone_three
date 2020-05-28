@@ -83,5 +83,17 @@ A user should not have to use the browser's back-button as the navigation bar is
 <p>I set the body element a fixed background image on all devices as it creates a modern/ professional 
 touch and adds credibility to the site. <p>
 
+#### Search Box
+
+<p>For good UX design I decided to have a minimal search interface on the index page. 
+I used Python to programme how this would search the database. <p>
+
+#### css grid layout and cards
+
+I used Bootstrap styling for my search results and user home pages to ensure that the pages 
+would be as responsive as possible. I also used cards for a standard layout of recipes, 
+this is visually effective because it porvides the necessary 'at-a-glance' details for the user. 
+I also used "object-fit:cover" in CSS to try to ensure that each movie image would display nicely within the card.
+
 
 

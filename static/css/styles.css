@@ -7,6 +7,8 @@ body{
 
 
 /* home */
+
+
 .masthead {
   height: 100vh;
   min-height: 500px;
@@ -38,8 +40,6 @@ body{
     color: #fff!important;
 
 }
-
-
 
 
 /* profile */
@@ -76,11 +76,6 @@ background: url('../images/.jpeg') no-repeat center center fixed;
     color: #00a1ab;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
 /* view movie page */
 small{
     font-size: 18px;
@@ -92,6 +87,24 @@ small{
 }
 
 /*images*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+@media only screen and (min-width: 600px){
+    .wrapper{
+        
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        
+    }
+}
 
 .card .card-image img{
     height: 460px;
@@ -105,17 +118,3 @@ small{
 }
 
 /* footer */
-/* Sticky Footer Classes */
-
-html,
-body {
-  height: 100%;
-}
-
-#page-content {
-  flex: 1 0 auto;
-}
-
-#sticky-footer {
-  flex-shrink: none;
-}
