@@ -5,18 +5,59 @@ body{
     margin-bottom: 0;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
 
 /* home */
 
-
-.masthead {
+.section-home {
+  position: relative;
+  width: 100%;
   height: 100vh;
-  min-height: 500px;
-  background-image: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url('../images/film.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.section-home h1  {
+  text-align: center;
+  font-size: 6rem;
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+  color: #fff;
+}
+
+.video-container{
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   
+}
+
+.opaque-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video {
+     background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%);
+    position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+   opacity: ;
 }
 
 .masthead-1 {
