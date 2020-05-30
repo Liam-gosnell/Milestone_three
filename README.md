@@ -78,9 +78,9 @@ A live demo can be found [here]().
 <p>I used Materialize to create a minimalist navigation bar that would toggle a side menu on mobile/tablet devices. 
 A user should not have to use the browser's back-button as the navigation bar is fixed.<p>
 
-#### Hero Image
+#### Hero Video
 
-<p>I set the body element a fixed background image on all devices as it creates a modern/ professional 
+<p>I set the body element a fixed background video on all devices as it creates a modern/ professional 
 touch and adds credibility to the site. <p>
 
 #### Search Box
@@ -88,12 +88,60 @@ touch and adds credibility to the site. <p>
 <p>For good UX design I decided to have a minimal search interface on the index page. 
 I used Python to programme how this would search the database. <p>
 
-#### css grid layout and cards
+#### Bootstrap and Materialize
 
-I used Bootstrap styling for my search results and user home pages to ensure that the pages 
-would be as responsive as possible. I also used cards for a standard layout of recipes, 
-this is visually effective because it porvides the necessary 'at-a-glance' details for the user. 
-I also used "object-fit:cover" in CSS to try to ensure that each movie image would display nicely within the card.
+<p>I used Bootstrap mainly for the padding for the website. 
+I also used materialize for the forms and icons as we were shown in our tutorials. The cards were made by using a custom CSS grid 
+to repeat the same 3 pattern over and over for addition of new movies.</p>
+
+
+#### Register and Login using WTForms and Werkzeug security
+
+<p>
+
+
+</p>
+
+
+#### Fetch API
+
+<p>
+
+</p>
+
+
+### Features for the Future
+
+<p>It would be a goal of mine  to obtain mailing data from the user in order to have a mailing list with new and featured Movies.</p>
+
+<p>It would be highly likely that pagination would be required as the database grows.</p>
+
+<p>It could be possible to allow users to comment on movies, creating more of a community ethos.</p>
+
+<p>It would be another goal to integrate social media feeds (i.e. Facebook,Instagram) to provide more user content and community.</p>
+
+
+# Technologies Used
+
+##### Languages
+
+* HTML - used for creating content and basic layout and validated with W3C
+* CSS - used for customised styling and layout and validated with W3C
+* JavaScript - used to provide interactivity and logic to the site
+* Python - used to programme the site and interact between the database and the frontend
+
+##### Frameworks
+
+* Flask - A Python micro framework that includes Jinja Templating and Werzkeug debugger. Werzkeug also provided password hashing which would ensure users' passwords are encrypted before being stored in the database.
+* Bootstrap - used for responsive layout, basic styling.
+* Materialize - used for forms layout and icons
+
+##### Tools
+
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/) - An API which provides tools for working with MongoDB in Python
+
+
+
 
 
 
