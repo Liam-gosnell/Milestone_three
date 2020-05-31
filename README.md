@@ -139,6 +139,8 @@ to repeat the same 3 pattern over and over for addition of new movies.</p>
 ##### Tools
 
 * [PyMongo](https://pymongo.readthedocs.io/en/stable/) - An API which provides tools for working with MongoDB in Python
+* [MongoDB](https://account.mongodb.com/account/login?signedOut=true) - non-relational document style database used to store the movies and users for Dessert Search
+* [WTForms](https://wtforms.readthedocs.io/en/stable/) - An API which provides form classes for ease of managing form data in Python
 
 
 
