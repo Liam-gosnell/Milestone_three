@@ -145,6 +145,8 @@ small{
   grid-gap: 20px;
 }
 
+
+
 @media only screen and (min-width: 600px){
     .wrapper{
         
@@ -153,8 +155,9 @@ small{
 
 @media only screen and (max-width: 768px) {
     .wrapper{
-        
+       
     }
+    
 }
 
 .card .card-image img{
@@ -168,4 +171,49 @@ small{
 }
 }
 
-/* footer */
+/* nologin.hmtl styles */
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+ 
+  transition: all 0.2s;
+}
+
+a{
+    color: #fff;
+}
+
+.nologin-bg{
+    height: 100vh;
+   background: url('../images/wave1.jpeg') no-repeat center center fixed ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+
+
