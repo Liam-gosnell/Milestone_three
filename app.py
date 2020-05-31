@@ -3,6 +3,13 @@ from flask import Flask, render_template, redirect, session, request, url_for, g
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from random import randint
+from functools import wraps
+from bson.objectid import ObjectId
+from passlib.hash import pbkdf2_sha256
+import os
+from os import path
+if path.exists("env.py"):
+    import env 
 
 """
 app config
@@ -10,13 +17,21 @@ app config
 
 app = Flask(__name__)
 
-app.secret_key = 'somesecretkeythatonlyiknow'
+
 app.config["MONGO_DBNAME"] = 'cinematic_base'
 app.config["MONGO_URI"] = 'mongodb+srv://liam:liam_r00t@myfirstcluster-eu72b.mongodb.net/cinematic_base?retryWrites=true&w=majority'
-
+app.secret_key = "B,t=u0W};gBf{DnBClV8/BwiW[1k~7EEzoiv(1Ng'*1k!^R,4sd|4-[:8:_t4c8"
 mongo = PyMongo(app)
 
-from user import routes
+
+def check_logged_in(func):
+    @wraps(func)
+    def wrapped_function(*args, **kwargs):
+        if 'logged-in' in session:
+            return(func(*args, **kwargs))
+        else:
+            return render_template('nologin.html')
+    return wrapped_function
 
 @app.route('/')
 def home():
@@ -29,21 +44,61 @@ def index():
                            movies=mongo.db.movies.find())
 
 
+@app.route('/signup', methods=["GET", "POST"])
+def signup():
+    if request.method == "GET":
+        return render_template('signup.html')
+    elif request.method == "POST":
+        username = request.form['userid']
+        password = request.form['password']
+        user_type = request.form['type']
+        _hash = pbkdf2_sha256.hash(password)
+        mongo.db.users.insert_one({
+            'username': username,
+            'password': _hash,
+            'type': user_type
+        })
+        return redirect(url_for('login'))
 
-@app.route('/user_home')
-def user_home():
-    return render_template('signup.html')
 
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template('login.html')
+    elif request.method == "POST":
+        username = request.form['userid']
+        user = mongo.db.users.find_one({'username': username})
+        user_password = user['password']
+        form_password = request.form['password']
+        if pbkdf2_sha256.verify(form_password, user_password):
+            session['logged-in'] = True
+            session['user-name'] = username
+            session['user-id'] = str(user['_id'])
+            session['usertype'] = user['type']
+        else:
+            return "login error"    
+        return render_template('login.html')
+
+@app.route('/logout')
+@check_logged_in
+def logout():
+    session.pop('logged-in', None)
+    session.pop('user-name', None)
+    session.pop('user-id', None)
+    session.pop('usertype', None)
+    return redirect(url_for('login'))
 
 
 
 @app.route('/add_movie')
+@check_logged_in
 def add_movie():
     return render_template('addmovie.html',
                            categories=mongo.db.categories.find())
 
 
 @app.route('/insert_movie', methods=['POST'])
+@check_logged_in
 def insert_movie():
     movies =  mongo.db.movies
     movies.insert_one(request.form.to_dict())
@@ -56,6 +111,7 @@ def view_movie(movie_id):
     return render_template('viewmovie.html', movie=movie)
 
 @app.route('/edit_movie/<movie_id>')
+@check_logged_in
 def edit_movie(movie_id):
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     all_categories = mongo.db.categories.find()
@@ -81,6 +137,7 @@ def update_movie(movie_id):
     return redirect(url_for('index'))
 
 @app.route('/delete_movie/<movie_id>')
+@check_logged_in
 def delete_movie(movie_id):
     mongo.db.movies.remove({'_id': ObjectId(movie_id)})
     return redirect(url_for('index'))

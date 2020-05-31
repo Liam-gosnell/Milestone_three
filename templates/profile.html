@@ -3,34 +3,7 @@
  {% block content %} 
 
 
-<header class="masthead-1">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12 text-center">
-        <h1 class="font-weight-dark text-light">
-        {{g.user.username}}'s Profile
-        </h1>
-       <h6 class="text-light">You are user number #{{g.user.id}}
-            </h6>
-        <a href="{{url_for('index')}}">
-        <button class="btn waves-effect waves-light " > All movies here!
-          <i class="material-icons right">arrow_forward</i>
-        </button>
-        </a>
-        <a href="{{url_for('index')}}">
-        <button class="btn waves-effect waves-light " > View Your favourites
-          <i class="material-icons right">favorite_border</i>
-        </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-        
-        
-        
-        
-        
+This page is top secret. You are a {{user_type}}. <a href="{{url_for('logout')}}">Logout</a>
         
         
         
