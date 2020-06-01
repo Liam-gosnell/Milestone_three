@@ -17,31 +17,32 @@
  <!-- Navbar -->
   <div class="navbar-fixed">
      <nav>
-    <div class="nav-wrapper navbar-fixed-top  nav-color black">
-      <a href="{{ url_for('home') }}" class="brand-logo">
+    <div class="nav-wrapper navbar-fixed-top  nav-color black ">
+      <a href="{{ url_for('home') }}" class="brand-logo ">
       <span class="Cinematic">Cinematic</span>
       <span class="base">BASE</span>
       </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down nav-link">
         <li><a href="{{url_for('home')}}">Home</a></li>
         <li><a href="{{url_for('index')}}">Movies</a></li>
         <li><a href="{{url_for('signup')}}">Sign up</a></li>
         <li><a href="{{url_for('login')}}">Login</a></li>
         <li><a href="{{url_for('logout')}}">Log out</a></li>
-         
+         <li><a href="{{url_for('profile')}}">Profile</a></li>
          
       </ul>
     </div>
   </nav>
   </div>
 <!-- Navbar mobile -->
-  <ul class="sidenav" id="mobile-demo">
-   
-   <li><a href="{{url_for('home')}}">Home</a></li>
-         
-       
-        <li><a href="{{url_for('index')}}">Movies</a></li>
+  <ul class="sidenav black" id="mobile-demo">
+        <li><a class="black" href="{{url_for('home')}}">Home</a></li>
+        <li><a class="black" href="{{url_for('index')}}">Movies</a></li>
+         <li><a class="black" href="{{url_for('signup')}}">Sign up</a></li>
+        <li><a class="black"  href="{{url_for('login')}}">Login</a></li>
+        <li><a class="black" href="{{url_for('logout')}}">Log out</a></li>
+         <li><a class="black" href="{{url_for('profile')}}">Profile</a></li>
   </ul>
   <!-- /.Navbar mobile -->
       <!-- /.Navbar -->

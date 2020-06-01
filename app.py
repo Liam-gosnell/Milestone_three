@@ -62,8 +62,6 @@ def signup():
         return redirect(url_for('login'))
 
 
-
-
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "GET":
@@ -81,6 +79,11 @@ def login():
         else:
             return render_template('loginerror.html')   
         return render_template('profile.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+   
 
 @app.route('/logout')
 @check_logged_in
@@ -106,6 +109,14 @@ def insert_movie():
     movies =  mongo.db.movies
     movies.insert_one(request.form.to_dict())
     return redirect(url_for('index'))
+
+@app.route('/add_favourite')
+@check_logged_in
+def add_favourite():
+    movies = mongo.db.movies
+    favourites = movies.insert_one(request.form.to_dict())
+    return render_template('favourites.html', favourites=favourites)
+
 
 
 @app.route('/view_movie/<movie_id>')
