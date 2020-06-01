@@ -1,3 +1,4 @@
+from functools import wraps
 import os
 from flask import Flask, render_template, redirect, session, request, url_for, g, session, abort, flash, Blueprint
 from flask_pymongo import PyMongo
@@ -61,6 +62,8 @@ def signup():
         return redirect(url_for('login'))
 
 
+
+
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "GET":
@@ -77,7 +80,7 @@ def login():
             session['usertype'] = user['type']
         else:
             return render_template('loginerror.html')   
-        return render_template('login.html')
+        return render_template('profile.html')
 
 @app.route('/logout')
 @check_logged_in

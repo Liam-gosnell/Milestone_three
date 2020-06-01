@@ -70,20 +70,25 @@ body{
    opacity: ;
 }
 
+
+
+
+
+/* Profile */
+
 .masthead-1 {
   height: 100vh;
   min-height: 500px;
-  background-image: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url('../images/profile.jpeg');
+  background-image: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url('../images/skate.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
 }
 
-
-
-/* login */
-
+.h-80{
+    height: 70%;
+}
 
 /* search */
 .search-bar{
@@ -139,6 +144,10 @@ small{
 
 /*images grid */
 
+.card .card-image img{
+    height: 460px;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -153,9 +162,15 @@ small{
     }
 }
 
+/* mobile devices to tablets */
+
 @media only screen and (max-width: 1024px) {
     .wrapper{
-       
+       display: block;
+    }
+
+    .card{
+        flex-direction: unset!important ;
     }
 
      video {
@@ -169,12 +184,28 @@ small{
   -o-background-size: cover;
   background-size: cover;
   }
+
+  .card .card-image img{
+    height: 460px;
+    width: 350px;
+}
+
+
+.movie-container{
+    width: 75%!important;
+}
+
+.card .card-content {
+    align-content: center!important;
+    align-items: center!important;
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+}
+ 
     
 }
 
-.card .card-image img{
-    height: 460px;
-}
+
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
