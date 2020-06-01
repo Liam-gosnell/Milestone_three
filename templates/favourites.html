@@ -20,7 +20,7 @@
             src="{{ favourites.img_url }}"/>
         </div>
         <div class="card-content">
-     
+     {% for favourite in favourites %}
           <span class="card-title activator grey-text text-darken-4">
      {{favourite.movie_name}}
             <i class="material-icons right">more_vert</i></span>
@@ -31,16 +31,16 @@
            <i class="material-icons right">fast_forward</i>
          </button>
           </a>
-          
-
+        
          </div>
          <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">
-     {{favourites.category_name}}
+     {{favourite.category_name}}
             <i class="material-icons right">close</i></span>
           <p class="text-dark">
-     {{favourites.movie_description}} Rating-  {{favourites.movie_rating}} 
+     {{favourite.movie_description}} Rating-  {{favourite.movie_rating}} 
           </p>
+    {% endfor %}
         </div>
        </div>
      

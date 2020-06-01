@@ -81,8 +81,11 @@ def login():
         return render_template('profile.html')
 
 @app.route('/profile')
+@check_logged_in
 def profile():
-    return render_template('profile.html')
+    username = session['user-name']
+    user = mongo.db.users.find_one({'username': username})
+    return render_template('profile.html', user=user)
    
 
 @app.route('/logout')
@@ -110,7 +113,7 @@ def insert_movie():
     movies.insert_one(request.form.to_dict())
     return redirect(url_for('index'))
 
-@app.route('/add_favourite')
+@app.route('/add_favourite', methods=['POST'])
 @check_logged_in
 def add_favourite():
     movies = mongo.db.movies
