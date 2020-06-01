@@ -100,20 +100,27 @@
      
       <div class="row center-align">
        <div class="col s12">
+        
+        <form> 
          <button class="btn waves-effect waves-light pulse" type="submit" name="action">Update
            <i class="material-icons right">fiber_new</i>
          </button>
+              
+           </form>
          </div>
        </div>
     </form>
 
     <div class="row ">
        <div class="col s12 mb-3">
-       <a href="{{ url_for('view_movie', movie_id=movie._id) }}">
+       
+       <form action="{{ url_for('view_movie', movie_id=movie._id) }}"> 
          <button class="btn waves-effect waves-light ">Back to Movie
            <i class="material-icons right">apps</i>
          </button>
-         </a>
+           </form>
+
+
          </div>
        </div>
 

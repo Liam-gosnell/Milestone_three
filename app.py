@@ -84,8 +84,8 @@ def login():
 @check_logged_in
 def profile():
     username = session['user-name']
-    user = mongo.db.users.find_one({'username': username})
-    return render_template('profile.html', user=user)
+    user = mongo.db.users.find_one({ 'username': username })
+    return render_template('profile.html', user=username)
    
 
 @app.route('/logout')

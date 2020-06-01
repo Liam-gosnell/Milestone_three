@@ -62,13 +62,13 @@
      <!-- Edit Moive -->
    <div class="row align-center">
   <div class="col-12 mt-5 center">
-     
-      <a href="{{ url_for('edit_movie',movie_id=movie._id) }}">
-          <button class="btn waves-effect waves-light #ffc400 amber accent-3 " type="submit" name="action">Edit
+
+     <form action="{{ url_for('edit_movie',movie_id=movie._id) }}">
+                <button class="btn waves-effect waves-light #ffc400 amber accent-3 " type="submit" name="action">Edit
            <i class="material-icons right ">edit</i>
          </button>
-          </a>
-          
+           </form>
+    
   </div>
   </div>
  <!-- /.Edit Moive -->
@@ -91,12 +91,14 @@
  
   <div class="row center-align mb-3 mt-3">
      <div class="col-12">
-     <a href="{{ url_for('add_favourite') }}">
-      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action" method="POST">
+
+     <form action="{{ url_for('add_favourite') }} ">
+               <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action" method="POST">
         Add to favourites
         <i class="material-icons right">star</i>
       </button>
-     </a>
+           </form>
+
      </div>
   </div>
   
@@ -105,13 +107,14 @@
     <!-- Delete movie-->
   <div class="row center-align mb-5 mt-5">
      <div class="col-12 btn-bottom">
-     <a href="{{ url_for('delete_movie', movie_id=movie._id) }}">
-      <button class="btn  #d50000 red accent-4 waves-effect waves-light" type="submit" name="action">
+     
+     <form action="{{ url_for('delete_movie', movie_id=movie._id) }}">
+               <button class="btn  #d50000 red accent-4 waves-effect waves-light" type="submit" name="action">
         Delete Movie
         <i class="material-icons right">backspace</i>
       </button>
-      
-     </a>
+           </form>
+
      </div>
   </div>
   <!-- /.Delete movie-->
@@ -119,11 +122,13 @@
     <!-- Back button -->
   <div class="row ">
        <div class="col s12 mb-3">
-       <a href="{{ url_for('index') }}">
-         <button class="btn waves-effect waves-light ">Back to Movies
+
+        <form action="{{ url_for('index') }}">
+                <button class="btn waves-effect waves-light ">Back to Movies
            <i class="material-icons right">apps</i>
          </button>
-         </a>
+           </form>
+
          </div>
        </div>
  <!-- /.Back button -->

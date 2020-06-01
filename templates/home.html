@@ -3,19 +3,19 @@
  {% block content %} 
   <div class="section-home">
    
-     <h2>
+     <h2 class="h2">
        <span class="Cinematic">Cinematic</span>
        <span class="base">BASE</span>
         </h2>
-        <p class="lead text-light">The best Movie Database</p>
-
-      
-        <a href="{{url_for('index')}}">
-          <button class="btn waves-effect waves-light " > Search our database!
+        <p class=" p lead text-light">The best Movie Database</p>
+        
+        <form action="{{url_for('index')}}">
+               <button class=" button-home btn waves-effect waves-light " > Search our database!
           <i class="material-icons right">arrow_forward</i>
           </button>
-        </a>
+           </form>
       
+        
 
      <div class="video-container .d-sm-none .d-md-block ">
       
