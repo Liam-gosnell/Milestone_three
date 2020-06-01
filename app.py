@@ -76,7 +76,7 @@ def login():
             session['user-id'] = str(user['_id'])
             session['usertype'] = user['type']
         else:
-            return "login error"    
+            return render_template('loginerror.html')   
         return render_template('login.html')
 
 @app.route('/logout')
