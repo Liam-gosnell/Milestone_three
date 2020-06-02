@@ -149,6 +149,10 @@ small{
 
 /*images grid */
 
+.bg-100-search{
+    height: 100%;
+}
+
 .card .card-image img{
     height: 460px;
 }
@@ -281,7 +285,7 @@ input:not([type]), input[type=text]:not(.browser-default){
 
 nav .nav-wrapper {
     position: relative;
-    height: 160px;
+    height: 164px;
 }
 
 nav .brand-logo {
@@ -351,7 +355,7 @@ nav .brand-logo {
 }
 
 .btn-index{
-       height: 76px;
+       height: 67px;
     width: 332px;
     font-size: 27px;
     align-content: center!important;
@@ -390,7 +394,7 @@ p {
 }
 
 .btn i, .btn-large i, .btn-small i, .btn-floating i, .btn-large i, .btn-small i, .btn-flat i {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: inherit;
 }
 
@@ -515,7 +519,7 @@ input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), i
 }
 
 .login-btn{
-    height: 8vh;
+    height: 6vh;
     font-size:32px;
     margin-top: 76px;
 }
@@ -553,6 +557,18 @@ margin-top: 149px;
 
 /* view movie mobile */
 
+.image-view{
+    display: none;
+}
+
+.col-md-6{
+    min-width: 100%!important;
+}
+
+.input-field .prefix{
+    font-size: 3rem!important;
+}
+
 .heading-mobile{
     font-size: 6.28rem!important;
 }
@@ -568,19 +584,19 @@ margin-top: 149px;
 .view-moviebtn{
         height: 50px;
     width: 284px;
-    font-size: 2.5rem!important;
+    font-size: 1.8rem!important;
 }
 
 .update-moviebtn{
         height: 77px;
     width: 284px;
-    font-size: 2.5rem!important;
+    font-size: 1.8rem!important;
 }
 
 .delete-moviebtn{
         height: 50px;
     width: 398px;
-    font-size: 2.5rem!important;
+    font-size: 1.8rem!important;
 }
 
 .fav-moviebtn{
@@ -592,7 +608,7 @@ margin-top: 149px;
 .back-moviebtn{
     height: 55px;
     width: 378px;
-    font-size: 2.5rem!important;
+    font-size: 1.8rem!important;
     margin-top: 60px;
     }
 
@@ -600,6 +616,20 @@ margin-top: 149px;
   font-size: 2rem!important;
 }
 
+.btn-text-small{
+    font-size: 24px;
+}
+
+/* profile mobile */
+
+.btn-profile{
+       height: 97px;
+    width: 332px;
+    font-size: 27px;
+    align-content: center!important;
+        margin-bottom: 102px;
+
+}
 
 
 }
@@ -689,3 +719,9 @@ a{
 h1{
     margin: 0;
 }
+
+
+
+
+/* dashboard */
+

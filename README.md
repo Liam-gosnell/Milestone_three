@@ -185,6 +185,12 @@ Chrome Developer Tools to check the site was responsive.
    I found it very difficult to get a search function that would search the movie name. 
    I eventually had code that would work in every instance although I am aware that it could be done more efficiently.</p>
 
+<p>There is also an issue with duplicate movies not showing up, this is because I currently have each movie set as a 
+key in the database and therefore can't have duplicates. I will continue to look into this.</p>
+
+<p>I had an issue with the users profile page when logging in. Once the user was logged , it would redirect to the users profile page that would display
+the users name. But I had trouble getting the exact text template to make that possible. I had got errors saying that the user was undefined.</p>
+
 
 
 

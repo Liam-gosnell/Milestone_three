@@ -7,10 +7,8 @@ from random import randint
 from functools import wraps
 from bson.objectid import ObjectId
 from passlib.hash import pbkdf2_sha256
-import os
-from os import path
-if path.exists("env.py"):
-    import env 
+
+
 
 """
 app config
@@ -28,7 +26,7 @@ mongo = PyMongo(app)
 def check_logged_in(func):
     @wraps(func)
     def wrapped_function(*args, **kwargs):
-        if 'loggedin' in session:
+        if 'logged-in' in session:
             return(func(*args, **kwargs))
         else:
             return render_template('nologin.html')
@@ -70,33 +68,34 @@ def login():
         username = request.form['userid']
         user = mongo.db.users.find_one({'username': username})
         user_password = user['password']
+       
         form_password = request.form['password']
+      
+         
         if pbkdf2_sha256.verify(form_password, user_password):
-            session['loggedin'] = True
-            session['username'] = username
-            session['userid'] = str(user['_id'])
+            
+            session['logged-in'] = True
+            session['user-name'] = username
+            session['user-id'] = str(user['_id'])
             session['usertype'] = user['type']
-            return render_template('profile.html')
         else:
-            return render_template('loginerror.html')   
-        
+            return render_template('loginerror.html') 
+        return redirect(url_for('profile'))
+     
 
 @app.route('/profile')
 @check_logged_in
 def profile():
-    username = session['username']
-    
+    username = session['user-name']
     user = mongo.db.users.find_one({'username': username })
-    
     return render_template('profile.html', user=user)
-   
 
 @app.route('/logout')
 @check_logged_in
 def logout():
-    session.pop('loggedin', None)
-    session.pop('username', None)
-    session.pop('userid', None)
+    session.pop('logged-in', None)
+    session.pop('user-name', None)
+    session.pop('user-id', None)
     session.pop('usertype', None)
     return redirect(url_for('login'))
 
@@ -163,7 +162,9 @@ def search_movie():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template("dashboard.html")
+    username = session['user-name']
+    user = mongo.db.users.find_one({'username': username })
+    return render_template("dashboard.html", user=user)
     
 
 
