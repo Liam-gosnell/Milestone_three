@@ -1,6 +1,15 @@
 body{
     
 }
+
+h3 {
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.9466666667rem 0 1.168rem 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
 .row{
     margin-bottom: 0;
 }
@@ -150,16 +159,117 @@ small{
   grid-gap: 20px;
 }
 
+/* Tablets */
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+.section-home{
+      background: url('../images/cinema1.jpeg') black no-repeat center center scroll;
+       -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+    video {
+    display: none!important;
+  }
+.wrapper{
+       display: block;
+    }
 
-@media only screen and (min-width: 600px){
-    
-      
- 
-
-    
+.card .card-image img {
+    height: 940px!important;
 }
 
+.card{
+    height: 70vh;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.x-icon{
+    font-size: 58px;
+}
+
+.dot-icon{
+    font-size: 51px;
+}
+
+.btn i, .btn-large i, .btn-small i, .btn-floating i, .btn-large i, .btn-small i, .btn-flat i {
+    font-size: 2rem;
+    line-height: inherit;
+}
+
+.add-paragraph{
+    font-size: 2.5rem;
+   
+    margin-bottom: 2rem;
+}
+
+.btn-index {
+    height: 46px;
+    width: 300px;
+    font-size: 19px;
+    align-content: center!important;
+    margin-bottom: 29px;
+    margin-top: 28px;
+}
+
+input:not([type]), input[type=text]:not(.browser-default){
+    height: 5rem!important;
+}
+
+.descripton-mobile{
+    font-size: 1rem!important;
+}
+
+.view-moviebtn{
+        height: 46px;
+    width: 300px;
+    font-size: 19px;
+    align-content: center!important;
+    margin-bottom: 29px;
+    margin-top: 28px;
+}
+
+.delete-moviebtn{
+       height: 46px;
+    width: 300px;
+    font-size: 19px;
+    align-content: center!important;
+    margin-bottom: 29px;
+    margin-top: 28px;
+}
+
+.fav-moviebtn{
+        height: 46px;
+    width: 300px;
+    font-size: 19px;
+    align-content: center!important;
+    margin-bottom: 29px;
+    margin-top: 28px;
+}
+
+.back-moviebtn{
+   height: 46px;
+    width: 300px;
+    font-size: 19px;
+    align-content: center!important;
+    margin-bottom: 29px;
+    margin-top: 28px;
+    }
+
+.btn-i{
+  font-size: 2rem!important;
+}
+
+ 
+
+
+}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
   /* For mobile phones: */

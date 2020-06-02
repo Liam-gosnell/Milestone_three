@@ -28,7 +28,7 @@ mongo = PyMongo(app)
 def check_logged_in(func):
     @wraps(func)
     def wrapped_function(*args, **kwargs):
-        if 'logged-in' in session:
+        if 'loggedin' in session:
             return(func(*args, **kwargs))
         else:
             return render_template('nologin.html')
@@ -72,29 +72,31 @@ def login():
         user_password = user['password']
         form_password = request.form['password']
         if pbkdf2_sha256.verify(form_password, user_password):
-            session['logged-in'] = True
-            session['user-name'] = username
-            session['user-id'] = str(user['_id'])
+            session['loggedin'] = True
+            session['username'] = username
+            session['userid'] = str(user['_id'])
             session['usertype'] = user['type']
+            return render_template('profile.html')
         else:
             return render_template('loginerror.html')   
-        return render_template('profile.html')
+        
 
 @app.route('/profile')
 @check_logged_in
 def profile():
-    username = session['user-name']
-    print(user-name)
+    username = session['username']
+    print("------------------------------------------", username)
     user = mongo.db.users.find_one({ 'username': username })
+    print("------------------------------------------", username)
     return render_template('profile.html', user=user)
    
 
 @app.route('/logout')
 @check_logged_in
 def logout():
-    session.pop('logged-in', None)
-    session.pop('user-name', None)
-    session.pop('user-id', None)
+    session.pop('loggedin', None)
+    session.pop('username', None)
+    session.pop('userid', None)
     session.pop('usertype', None)
     return redirect(url_for('login'))
 
