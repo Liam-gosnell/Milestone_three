@@ -6,20 +6,20 @@
   <div class="container h-80">
      <div class="row h-100 align-items-center">
       <div class="col-12 text-center">
-      
+      <!--Username-->
          <h1 class="font-weight-dark text-center text-light">
                 {{user.username}}'s Profile
          </h1>
          <div class="row mt-5">
          <div class="col s12">
        
-
+         <!--Movies-->
          <form action="{{ url_for('index') }}">
                <button class="btn waves-effect waves-light btn-profile btn-text-small">Movies
            <i class="material-icons right">apps</i>
          </button>
            </form>
-           
+           <!--Dashboard-->
            <form action="{{url_for('dashboard')}}">
               <button class="btn waves-effect waves-light mt-4 btn-profile btn-text-small" > Dashboard
                 <i class="material-icons right">star</i>

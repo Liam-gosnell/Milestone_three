@@ -8,18 +8,20 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
+          <!--heading-->
             <h5 class="card-title text-center welcome">Login failed</h5>
+            <!--message-->
             <p class="text-center login-p">Your login has failed please try to login again.
             Or if you dont have an account register </p>
             
               
               
               <hr class="my-4">
-               
+               <!--button-->
                 <form action="{{ url_for('login') }}">
                <button class="btn btn-lg mb-3 btn btn-block text-uppercase login-btn" >Login</button>
            </form>
-
+             <!--button-->
               <form action="{{ url_for('signup') }}">
                <button class="btn btn-lg  btn-block text-uppercase login-btn" >Register</button>
            </form>

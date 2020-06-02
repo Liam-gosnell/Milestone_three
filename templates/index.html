@@ -43,25 +43,26 @@
      <section class="wrapper ">
      {% for movie in movies %}
       <div class="card">
+      <!--Image -->
         <div class="card-image waves-effect waves-block waves-light">
           <img
             class="activator"
             src="{{ movie.img_url }}"/>
         </div>
         <div class="card-content">
-     
+     <!--Name -->
           <span class="card-title text-center activator grey-text text-darken-4">
      {{movie.movie_name}}
             <i class="material-icons right dot-icon">more_vert</i></span>
             <hr>
-          
+          <!--Button-->
           <a href="{{ url_for('view_movie',movie_id=movie._id) }}">
           <button class="btn waves-effect waves-light align-center infotrailer-btn btn-index" type="submit" name="action">Info&Trailer
            <i class="material-icons right ">fast_forward</i>
          </button>
           </a>
           
-
+         <!--Reveal-->
          </div>
          <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">

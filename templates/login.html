@@ -9,17 +9,20 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                          <form method="POST" action="{{url_for('login')}}">
+                         <!--heading-->
                             <h3 class="text-center text-info login-heading">Login</h3>
                             <div class="form-group group-spacing">
+                             <!--username-->
                                 <label for="username" class="text-info">Username:</label><br>
                                 <input type="text" class="text-login" name="userid">
                                    
                             </div>
+                             <!--password-->
                             <div class="form-group">
                                 <label  for="password" class="text-info">Password:</label><br>
                                 <input type="password" class="text-login" name="password">
                             </div>
-                           
+                            <!--button-->
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn button-login btn-info btn-md" value="login">
                             </div>

@@ -1,136 +1,193 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <!-- Add Moive form -->
 <div class="h-100">
-<section>
-  <div class="container">
- <h3 class="center add-heading">Add Movie</h3>
-  <!-- Add Moive name -->
-    <form  action="{{ url_for('insert_movie') }}" method="POST" class="col s12">
+  <section>
+    <div class="container">
+      <h3 class="center add-heading">Add Movie</h3>
+      <!-- Add Moive name -->
+      <form
+        action="{{ url_for('insert_movie') }}"
+        method="POST"
+        class="col s12" >
         <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix i-addmovie ">create</i>
-                <input id="movie_name" name="movie_name" type="text" class="validate " required>
-                <label for="icon_prefix icon-name">Movie name</label>
-            </div>
-       </div>
-       <!-- Add Moive director -->
-       <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix i-addmovie">videocam</i>
-                <input id="movie_director" name="movie_director" type="text" class="validate " required>
-                <label for="icon_prefix">Directed by:</label>
-            </div>
-       </div>
-       <!-- Add Moive writer -->
-       <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix  i-addmovie">keyboard</i>
-                <input id="movie_writer" name="movie_writer" type="text" class="validate " required>
-                <label for="icon_prefix">Writen by:</label>
-            </div>
-       </div>
-       <!-- Add Moive description -->
-         <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix i-addmovie">subject</i>
-                <textarea name="movie_description" id="movie_description" class="materialize-textarea " required></textarea>
-                <label for="icon_telephone">Movie Description</label>
-            </div>
-         </div> 
-          <!-- Add Moive category -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">create</i>
+            <input
+              id="movie_name"
+              name="movie_name"
+              type="text"
+              class="validate"
+              required
+            />
+            <label for="icon_prefix icon-name">Movie name</label>
+          </div>
+        </div>
+        <!-- Add Moive director -->
         <div class="row">
-            <div class="input-field col s12 ">
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">videocam</i>
+            <input
+              id="movie_director"
+              name="movie_director"
+              type="text"
+              class="validate"
+              required
+            />
+            <label for="icon_prefix">Directed by:</label>
+          </div>
+        </div>
+        <!-- Add Moive writer -->
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">keyboard</i>
+            <input
+              id="movie_writer"
+              name="movie_writer"
+              type="text"
+              class="validate"
+              required
+            />
+            <label for="icon_prefix">Writen by:</label>
+          </div>
+        </div>
+        <!-- Add Moive description -->
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">subject</i>
+            <textarea
+              name="movie_description"
+              id="movie_description"
+              class="materialize-textarea"
+              required
+            ></textarea>
+            <label for="icon_telephone">Movie Description</label>
+          </div>
+        </div>
+        <!-- Add Moive category -->
+        <div class="row">
+          <div class="input-field col s12">
             <i class="material-icons prefix i-addmovie">assignment_ind</i>
-             <select id="category" class="margin-choose" name="category_name">
-               <option  value="" disabled selected>Choose</option>
-               {% for cat in categories %}
-               <option class="" value="{{cat.category_name}}">{{cat.category_name}}</option>
-               {% endfor %}
-             </select>
-               <label>Select genre of movie</label>
-            </div>
-      </div>
-      <!-- Add Moive rating -->
-      <div class="row">
-           <div class="input-field col s12">
-              <strong><p>Rating</p></strong>
-               <p class="range-field">
-               <input type="range" name="movie_rating" id="movie_rating"  min="0" max="100" required />
-               </p>
-           </div>
-      </div>
-      <!-- Add Moive stars -->
-      <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix i-addmovie ">star</i>
-                <input id="movie_stars" name="movie_stars" type="text" class="validate " required>
-                <label for="icon_prefix">Movie Stars:</label>
-            </div>
-       </div>
-       <!-- Add Moive time -->
-       <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix i-addmovie">access_time</i>
-                <input id="movie_time" name="movie_time" type="text" class="validate" required>
-                <label for="icon_prefix">Movie time:</label>
-            </div>
-       </div>
-       <!-- Add Moive image -->
-      <div class="row ">
-        <div class="col s12">
-        <p>Copy Large portrait image address :</p>
-          
-          <div class="input-field inline">
-            <input id="img_url" name="img_url" type="url" class="validate" required>
-            <label style="font-size:2rem;" for="email_inline">URL</label>
-          
+            <select id="category" class="margin-choose" name="category_name">
+              <option value="" disabled selected>Choose</option>
+              {% for cat in categories %}
+              <option class="" value="{{cat.category_name}}"
+                >{{cat.category_name}}</option
+              >
+              {% endfor %}
+            </select>
+            <label>Select genre of movie</label>
           </div>
         </div>
-    </div>
-   <!-- Add Moive trailer -->
-<div class="row ">
-        <div class="col s12">
-        <p>Youtube embed src"" for trailer:</p>
-          
-          <div class="input-field inline">
-            <input  id="movie_trailer" name="movie_trailer" type="url" class="validate" required>
-            <label style="font-size:2rem;" for="email_inline">URL</label>
-           
+        <!-- Add Moive rating -->
+        <div class="row">
+          <div class="input-field col s12">
+            <p>Rating</p>
+            <p class="range-field">
+              <input
+                type="range"
+                name="movie_rating"
+                id="movie_rating"
+                min="0"
+                max="100"
+              />
+            </p>
           </div>
         </div>
-    </div>
+        <!-- Add Moive stars -->
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">star</i>
+            <input
+              id="movie_stars"
+              name="movie_stars"
+              type="text"
+              class="validate"
+              required/>
+            <label for="icon_prefix">Movie Stars:</label>
+          </div>
+        </div>
+        <!-- Add Moive time -->
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix i-addmovie">access_time</i>
+            <input
+              id="movie_time"
+              name="movie_time"
+              type="text"
+              class="validate"
+              required
+            />
+            <label for="icon_prefix">Movie time:</label>
+          </div>
+        </div>
+        <!-- Add Moive image -->
+        <div class="row">
+          <div class="col s12">
+            <p>Copy Large portrait image address :</p>
+
+            <div class="input-field inline">
+              <input
+                id="img_url"
+                name="img_url"
+                type="url"
+                class="validate"
+                required
+              />
+              <label style="font-size: 2rem;" for="email_inline">URL</label>
+            </div>
+          </div>
+        </div>
+        <!-- Add Moive trailer -->
+        <div class="row">
+          <div class="col s12">
+            <p>Youtube embed src"" for trailer:</p>
+
+            <div class="input-field inline">
+              <input
+                id="movie_trailer"
+                name="movie_trailer"
+                type="url"
+                class="validate"
+                required
+              />
+              <label style="font-size: 2rem;" for="email_inline">URL</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+
+        <div class="row center-align">
+          <div class="col s12">
+            <form>
+              <button
+                class="btn waves-effect waves-light pulse update-moviebtn"
+                type="submit"
+                name="action"
+              >
+                Add Movie
+                <i class="material-icons right btn-i">playlist_add</i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </form>
       
-      <!-- Submit button -->
-     
-      <div class="row center-align">
-       <div class="col s12">
-        <form>
-               <button class="btn waves-effect waves-light pulse update-moviebtn" type="submit" name="action">Add Movie
-           <i class="material-icons right btn-i">playlist_add</i>
-         </button>
-           </form>
-
-
-         
-         </div>
-       </div>
-    </form>
-  <!-- Back to movies -->
-    <div class="row ">
-       <div class="col s12 mb-3">
-
-        <form action="{{ url_for('index') }}">
-              <button class="btn waves-effect waves-light back-moviebtn">Back to Home
-           <i class="material-icons right btn-i">apps</i>
-         </button>
-           </form>
-         </div>
-       </div>
-
-</div>
-</section>
+      <!-- Back to movies -->
+      <div class="row">
+        <div class="col s12 mb-3">
+          <form action="{{ url_for('index') }}">
+            <button class="btn waves-effect waves-light back-moviebtn">
+              Back to Home
+              <i class="material-icons right btn-i">apps</i>
+            </button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 <!-- ./Add Moive form -->
 {% endblock %}

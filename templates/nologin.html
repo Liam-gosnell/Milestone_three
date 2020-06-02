@@ -7,17 +7,16 @@
       <div class=" col-md-7  mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
+          <!--Heading-->
             <h5 class="card-title text-center welcome">Welcome</h5>
-            <p class="text-center login-p">To proceed further, Login or sign up!</p>
-            
-              
-              
+            <!--Text-->
+            <p class="text-center login-p">To proceed further, Login or sign up!</p> 
               <hr class="my-4">
-
+              <!--Button-->
                <form action="{{ url_for('login') }}">
                <button class="btn btn-lg mb-3 btn btn-block text-uppercase login-btn" >Login</button>
            </form>
-              
+              <!--Button-->
               
              <form action="{{ url_for('signup') }}">
                <button class="btn btn-lg  btn-block text-uppercase login-btn" >Register</button>

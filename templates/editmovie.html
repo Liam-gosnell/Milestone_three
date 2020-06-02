@@ -3,8 +3,9 @@
 <div class="h-100">
 <section>
   <div class="container">
+  <!--Heading-->
  <h3 class="center ">Edit Movie</h3>
-
+<!-- Edit Movie name-->
     <form action="{{ url_for('update_movie', movie_id=movie._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
@@ -13,6 +14,7 @@
                 <label class="label-edit" for="icon_prefix">Movie name</label>
             </div>
        </div>
+       <!-- Edit Movie director-->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">videocam</i>
@@ -20,6 +22,7 @@
                 <label class="label-edit" for="icon_prefix">Directed by:</label>
             </div>
        </div>
+       <!-- Edit Movie writer-->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">keyboard</i>
@@ -27,6 +30,7 @@
                 <label class="label-edit" for="icon_prefix">Writen by:</label>
             </div>
        </div>
+       <!-- Edit Movie description-->
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
@@ -34,7 +38,7 @@
                 <label class="label-edit" for="icon_telephone" >Movie Description</label>
             </div>
          </div> 
-
+         <!-- Edit Movie Genre-->
         <div class="row">
             <div class="input-field col s12 ">
             <i class="material-icons prefix">assignment_ind</i>
@@ -52,14 +56,16 @@
                <label class="label-edit">Select genre of movie</label>
             </div>
       </div>
+      <!-- Edit Movie Rating-->
       <div class="row">
            <div class="input-field col s12">
-              <strong><p>Rating</p></strong>
+              <p>Rating</p>
                <p class="range-field">
                <input type="range" name="movie_rating" id="movie_rating" value="{{movie.movie_rating}}"   min="0" max="100" />
                </p>
            </div>
       </div>
+      <!-- Edit Movie stars-->
       <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">star</i>
@@ -67,6 +73,7 @@
                 <label class="label-edit" for="icon_prefix">Movie Stars:</label>
             </div>
        </div>
+       <!-- Edit Movie Time-->
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">access_time</i>
@@ -74,24 +81,25 @@
                 <label class="label-edit" for="icon_prefix">Movie time:</label>
             </div>
        </div>
-
+       <!-- Edit Movie Image-->
       <div class="row ">
         <div class="col s12">
         <p>Insert Image URL here:</p>
         
           <div class="input-field inline">
-            <input class="label-edit" id="img_url" name="img_url" type="url" class="validate" value="{{movie.img_url}}">
+            <input class="label-edit vailidate" id="img_url" name="img_url" type="url"  value="{{movie.img_url}}">
             <label   for="email_inline">URL</label>
             <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
         </div>
     </div>
+    <!-- Edit Movie Trailer-->
       <div class="row ">
         <div class="col s12  " >
         <p> youtube trailer embedded URL here:</p>
            
           <div class="input-field inline">
-            <input class="label-edit" id="movie_trailer" name="movie_trailer" type="url" class="validate" value="{{movie.movie_trailer}}">
+            <input class="label-edit validate" id="movie_trailer" name="movie_trailer" type="url"  value="{{movie.movie_trailer}}">
             <label for="email_inline">URL</label>
             <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
@@ -99,7 +107,7 @@
     </div>
     
       
-     
+     <!-- Edit Movie Update button-->
       <div class="row center-align">
        <div class="col s12">
         
@@ -112,7 +120,7 @@
          </div>
        </div>
     </form>
-
+<!-- Edit Movie back button-->
     <div class="row ">
        <div class="col s12 mb-3">
        
