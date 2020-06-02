@@ -346,13 +346,13 @@ nav .brand-logo {
     font-size: 45px;
     font-weight: 400;
 }
-.card .card-image img{
-    height: 800px!important;
+.card .card-image img {
+    height: 948px!important;
 }
 
 .btn-index{
        height: 76px;
-    width: 440px;
+    width: 332px;
     font-size: 27px;
     align-content: center!important;
         margin-bottom: 102px;
@@ -567,6 +567,12 @@ margin-top: 149px;
 
 .view-moviebtn{
         height: 50px;
+    width: 284px;
+    font-size: 2.5rem!important;
+}
+
+.update-moviebtn{
+        height: 77px;
     width: 284px;
     font-size: 2.5rem!important;
 }

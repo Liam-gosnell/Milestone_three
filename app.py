@@ -85,9 +85,9 @@ def login():
 @check_logged_in
 def profile():
     username = session['username']
-    print("------------------------------------------", username)
-    user = mongo.db.users.find_one({ 'username': username })
-    print("------------------------------------------", username)
+    
+    user = mongo.db.users.find_one({'username': username })
+    
     return render_template('profile.html', user=user)
    
 
