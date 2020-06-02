@@ -8,6 +8,9 @@ from functools import wraps
 from bson.objectid import ObjectId
 from passlib.hash import pbkdf2_sha256
 
+from os import path
+if path.exists("env.py"):
+    import env 
 
 
 """
@@ -17,9 +20,11 @@ app config
 app = Flask(__name__)
 
 
-app.config["MONGO_DBNAME"] = 'cinematic_base'
-app.config["MONGO_URI"] = 'mongodb+srv://liam:liam_r00t@myfirstcluster-eu72b.mongodb.net/cinematic_base?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = "B,t=u0W};gBf{DnBClV8/BwiW[1k~7EEzoiv(1Ng'*1k!^R,4sd|4-[:8:_t4c8"
+
+
 mongo = PyMongo(app)
 
 

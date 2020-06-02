@@ -119,6 +119,10 @@ h3 {
   background-size: cover;
 }
 
+.search-result{
+    height: 100vh!important;
+}
+
 .bg-view{
 background: url('../images/.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
