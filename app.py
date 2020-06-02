@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = "B,t=u0W};gBf{DnBClV8/BwiW[1k~7EEzoiv(1Ng'*1k!^R,4sd|4-[:8:_t4c8"
+app.secret_key = "mysecretkeyonly"
 
 
 mongo = PyMongo(app)
@@ -174,7 +174,7 @@ def dashboard():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'ss'
+    app.secret_key = 'mysecretkeyonly'
     app.run(host=os.environ.get('IP', '0.0.0.0'),
             port=int(os.environ.get('PORT', '5000')),
             debug=False)
