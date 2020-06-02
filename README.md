@@ -95,19 +95,13 @@ I also used materialize for the forms and icons as we were shown in our tutorial
 to repeat the same 3 pattern over and over for addition of new movies.</p>
 
 
-#### Register and Login using WTForms and Werkzeug security
+#### Register and Login using 
 
 <p>
 
 
 </p>
 
-
-#### Fetch API
-
-<p>
-
-</p>
 
 
 ### Features for the Future
@@ -139,10 +133,57 @@ to repeat the same 3 pattern over and over for addition of new movies.</p>
 ##### Tools
 
 * [PyMongo](https://pymongo.readthedocs.io/en/stable/) - An API which provides tools for working with MongoDB in Python
-* [MongoDB](https://account.mongodb.com/account/login?signedOut=true) - non-relational document style database used to store the movies and users for Dessert Search
-* [WTForms](https://wtforms.readthedocs.io/en/stable/) - An API which provides form classes for ease of managing form data in Python
+* [MongoDB](https://account.mongodb.com/account/login?signedOut=true) - non-relational document style database used to store the movies and users for Cimeatic Base
+* [W3C Validator](https://validator.w3.org/) - HTML Validator
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) -  CSS Validator
+* [Python Validator](https://pypi.org/project/pycodestyle/) - Python Validator
+* [JSLINT](https://www.jslint.com/) - JS Validator
+* [GITPOD](https://www.gitpod.io/) - this was the IDE where I developed and tested my application
+* [GIT]- I pushed my files using Git, storing them in a repository on GitHub
+* [HEROKU](https://dashboard.heroku.com/) -  I deployed my finished site through Heroku
+* [Chrome developer tools](https://developers.google.com/web/tools/chrome-devtools/) - used to test and check my work throughout the development process
 
 
+##### Liberaries
+
+* [JQUERY]() - JavaScript library used to make custom-code for the site which allows for DOM manipulation
+* [Material Icons](https://material.io/resources/icons/?style=baseline) - used for links and icons to make the site more appealing
+
+
+# Testing
+
+#### Manual and Automated Testing
+
+<p>Manual testing was done for all CRUD operations from the database as well as for all links, 
+buttons and forms in the site. I used Werkzeug Debugger throughout the development process to 
+immediately flag errors when running my app.py file.</p>
+
+<p>I created a test.py file that tested the connection to my database, 
+ensuring data was inserted in a suitable manner and was returned to the console when requested.</p>
+
+<p>Throughout the process I continually manually tested the frontend, 
+by saving my work in Gitpod and running it in Google Chrome. 
+I used Chrome Developer Tools to ensure that my site was responsive and 
+functioned in all screen sizes and that my styling was applied appropriately throughout.</p>
+
+<p>I had several users log in and out of the website searching, adding, editing and deleting (CRUD) the movies.</p>
+
+#### Responsiveness
+
+<p>I tested my project throughout development using 
+Chrome Developer Tools to check the site was responsive.
+ I continually made adjustments to my media-queries 
+ in CSS to ensure it looked good at all screen-widths,
+  I began to investigate a range of screen sizes and realised the best option was just to make it as responsive as I possibly could!</p>
+
+
+#### Bugs
+
+<p>There were several issues with my Python code, however,
+ using the Werkzeug Debugger allowed for an immediate fix.
+  I used the documentation for Flask, PyMongo and MongoDB to help solve any problems.
+   I found it very difficult to get a search function that would search the movie name. 
+   I eventually had code that would work in every instance although I am aware that it could be done more efficiently.</p>
 
 
 
