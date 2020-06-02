@@ -4,23 +4,23 @@
 <section class="nologin-bg">
 <div class="container">
     <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class=" col-md-7  mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Welcome</h5>
-            <p class="text-center">To proceed further, Login or sign up!</p>
+            <h5 class="card-title text-center welcome">Welcome</h5>
+            <p class="text-center login-p">To proceed further, Login or sign up!</p>
             
               
               
               <hr class="my-4">
 
                <form action="{{ url_for('login') }}">
-               <button class="btn btn-lg mb-3 btn btn-block text-uppercase" >Login</button>
+               <button class="btn btn-lg mb-3 btn btn-block text-uppercase login-btn" >Login</button>
            </form>
               
               
              <form action="{{ url_for('signup') }}">
-               <button class="btn btn-lg  btn-block text-uppercase" >Register</button>
+               <button class="btn btn-lg  btn-block text-uppercase login-btn" >Register</button>
            </form>
         
           </div>

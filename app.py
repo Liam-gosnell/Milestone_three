@@ -84,8 +84,9 @@ def login():
 @check_logged_in
 def profile():
     username = session['user-name']
+    print(user-name)
     user = mongo.db.users.find_one({ 'username': username })
-    return render_template('profile.html', user=username)
+    return render_template('profile.html', user=user)
    
 
 @app.route('/logout')
@@ -113,14 +114,6 @@ def insert_movie():
     movies.insert_one(request.form.to_dict())
     return redirect(url_for('index'))
 
-@app.route('/add_favourite', methods=['POST'])
-@check_logged_in
-def add_favourite():
-    movies = mongo.db.movies
-    favourites = movies.insert_one(request.form.to_dict())
-    return render_template('favourites.html', favourites=favourites)
-
-
 
 @app.route('/view_movie/<movie_id>')
 def view_movie(movie_id):
@@ -128,7 +121,7 @@ def view_movie(movie_id):
     return render_template('viewmovie.html', movie=movie)
 
 @app.route('/edit_movie/<movie_id>')
-@check_logged_in
+
 def edit_movie(movie_id):
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     all_categories = mongo.db.categories.find()
@@ -165,6 +158,10 @@ def search_movie():
     movie_name = search_term.title()
     results = mongo.db.movies.find_one({"movie_name": movie_name})
     return render_template('searchresult.html', results=results) 
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template("dashboard.html")
     
 
 

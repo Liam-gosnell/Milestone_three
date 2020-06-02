@@ -11,7 +11,7 @@
   <i class="fas fa-search" aria-hidden="true"></i>
   <input name="movie_name" class="form-control text-light form-control-sm ml-3 w-75 searchbar" type="text" placeholder="Search"
     aria-label="Search">
-    <button class="btn waves-effect waves-light" type="submit" name="action">Search
+    <button class="btn waves-effect waves-light btn-index" type="submit" name="action">Search
     <i class="material-icons right">send</i>
   </button>
  </form>
@@ -22,10 +22,10 @@
    <div class="container">
      <div class="row text-center align-center">
       <div class="col-12 mb-4 mt-4">
-       <p>Dont see the movie that you want? Press the button below to customize your site.</p>
+       <p class="add-paragraph">Dont see the movie that you want? Press the button below to customize your site.</p>
 
         <form action="{{ url_for('add_movie') }}">
-               <button class="btn waves-effect waves-light " type="submit" name="action">Add a movie
+               <button class="btn waves-effect waves-light btn-index" type="submit" name="action">Add a movie
            <i class="material-icons right">playlist_add</i>
          </button>
            </form>
@@ -52,12 +52,12 @@
      
           <span class="card-title text-center activator grey-text text-darken-4">
      {{movie.movie_name}}
-            <i class="material-icons right">more_vert</i></span>
+            <i class="material-icons right dot-icon">more_vert</i></span>
             <hr>
           
           <a href="{{ url_for('view_movie',movie_id=movie._id) }}">
-          <button class="btn waves-effect waves-light align-center " type="submit" name="action">Info&Trailer
-           <i class="material-icons right">fast_forward</i>
+          <button class="btn waves-effect waves-light align-center infotrailer-btn" type="submit" name="action">Info&Trailer
+           <i class="material-icons right ">fast_forward</i>
          </button>
           </a>
           
@@ -66,7 +66,7 @@
          <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">
      {{movie.category_name}}
-            <i class="material-icons right">close</i></span>
+            <i class="material-icons right x-icon">close</i></span>
           <p class="text-dark">
      {{movie.movie_description}} Rating-  {{movie.movie_rating}} 
           </p>

@@ -5,9 +5,9 @@
 <div class="container ">
   
      <!-- View movies Heading -->
-        <h4 class="my-4">
+        <h4 class="my-4 heading-mobile">
      {{movie.movie_name}}
-      <small>Written by:
+      <small class="written-by">Written by:
       {{movie.movie_writer}}
       </small>
         </h4>
@@ -21,41 +21,42 @@
         alt=""/>
     </div>
 
-    <div class="col-md-6">
+      <p class="descripton-mobile">
+    <div class="col-md-6 ">
       <h5 class="my-3">
          Info:
       </h5>
       
-      <p>
+      <p class="descripton-mobile">
         {{movie.movie_description}}
       </p>
 
       <h5>Rating:</h5>
       <hr>
-      <p>
+      <p class="descripton-mobile">
         {{movie.movie_rating}}
       </p>
       <h5>Director:</h5>
       <hr>
-      <p>
+      <p class="descripton-mobile">
         {{movie.movie_director}}
       </p>
       <h5>Running Time:</h5>
       <hr>
-      <p>
+      <p class="descripton-mobile">
         {{movie.movie_time}}
       </p>
       <h5>Genre:</h5>
       <hr>
-      <p>
+      <p class="descripton-mobile">
         {{movie.category_name}}
       </p>
       <h5>Stars:</h5>
       <hr>
-      <p>
+      <p class="descripton-mobile">
       {{movie.movie_stars}}
       </p>
-    </div>
+     </div>
   </div>
   <!-- /.Movie Item Row -->
 
@@ -64,8 +65,8 @@
   <div class="col-12 mt-5 center">
 
      <form action="{{ url_for('edit_movie',movie_id=movie._id) }}">
-                <button class="btn waves-effect waves-light #ffc400 amber accent-3 " type="submit" name="action">Edit
-           <i class="material-icons right ">edit</i>
+                <button class="btn waves-effect waves-light #ffc400 amber view-moviebtn accent-3 " type="submit" name="action">Edit
+           <i class="material-icons right btn-i ">edit</i>
          </button>
            </form>
     
@@ -87,21 +88,8 @@
 
   <!-- Favourite movie -->
   
-<div class="container">
- 
-  <div class="row center-align mb-3 mt-3">
-     <div class="col-12">
 
-     <form action="{{ url_for('add_favourite') }} ">
-               <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action" method="POST">
-        Add to favourites
-        <i class="material-icons right">star</i>
-      </button>
-           </form>
 
-     </div>
-  </div>
-  
   <!-- /.Favourite movie -->
 
     <!-- Delete movie-->
@@ -109,9 +97,9 @@
      <div class="col-12 btn-bottom">
      
      <form action="{{ url_for('delete_movie', movie_id=movie._id) }}">
-               <button class="btn  #d50000 red accent-4 waves-effect waves-light" type="submit" name="action">
+               <button class="btn  #d50000 red accent-4 delete-moviebtn waves-effect waves-light" type="submit" name="action">
         Delete Movie
-        <i class="material-icons right">backspace</i>
+        <i class="material-icons right btn-i">backspace</i>
       </button>
            </form>
 
@@ -124,8 +112,8 @@
        <div class="col s12 mb-3">
 
         <form action="{{ url_for('index') }}">
-                <button class="btn waves-effect waves-light ">Back to Movies
-           <i class="material-icons right">apps</i>
+                <button class="btn waves-effect back-moviebtn waves-light ">Back to Movies
+           <i class="material-icons right btn-i">apps</i>
          </button>
            </form>
 

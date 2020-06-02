@@ -10,28 +10,28 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix ">create</i>
                 <input id="movie_name" name="movie_name" type="text" class="validate" value="{{movie.movie_name}}">
-                <label for="icon_prefix">Movie name</label>
+                <label class="label-edit" for="icon_prefix">Movie name</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">videocam</i>
                 <input id="movie_director" name="movie_director" type="text" class="validate" value="{{movie.movie_director}}"> 
-                <label for="icon_prefix">Directed by:</label>
+                <label class="label-edit" for="icon_prefix">Directed by:</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">keyboard</i>
                 <input id="movie_writer" name="movie_writer" type="text" class="validate " value="{{movie.movie_writer}}">
-                <label for="icon_prefix">Writen by:</label>
+                <label class="label-edit" for="icon_prefix">Writen by:</label>
             </div>
        </div>
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="movie_description" id="movie_description"  class="materialize-textarea " >{{movie.movie_description}}</textarea>
-                <label for="icon_telephone" >Movie Description</label>
+                <label class="label-edit" for="icon_telephone" >Movie Description</label>
             </div>
          </div> 
 
@@ -49,7 +49,7 @@
 
                {% endfor %}
              </select>
-               <label>Select genre of movie</label>
+               <label class="label-edit">Select genre of movie</label>
             </div>
       </div>
       <div class="row">
@@ -64,32 +64,34 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix ">star</i>
                 <input id="movie_stars" name="movie_stars" type="text" value="{{movie.movie_stars}}" class="validate ">
-                <label for="icon_prefix">Movie Stars:</label>
+                <label class="label-edit" for="icon_prefix">Movie Stars:</label>
             </div>
        </div>
        <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix ">access_time</i>
                 <input id="movie_time" name="movie_time" type="text" value="{{movie.movie_time}}" class="validate ">
-                <label for="icon_prefix">Movie time:</label>
+                <label class="label-edit" for="icon_prefix">Movie time:</label>
             </div>
        </div>
 
       <div class="row ">
         <div class="col s12">
-          Insert Image URL here:
+        <p>Insert Image URL here:</p>
+        
           <div class="input-field inline">
-            <input id="img_url" name="img_url" type="url" class="validate" value="{{movie.img_url}}">
-            <label for="email_inline">URL</label>
+            <input class="label-edit" id="img_url" name="img_url" type="url" class="validate" value="{{movie.img_url}}">
+            <label   for="email_inline">URL</label>
             <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
         </div>
     </div>
       <div class="row ">
-        <div class="col s12">
-           youtube trailer embedded URL here:
+        <div class="col s12  " >
+        <p> youtube trailer embedded URL here:</p>
+           
           <div class="input-field inline">
-            <input id="movie_trailer" name="movie_trailer" type="url" class="validate" value="{{movie.movie_trailer}}">
+            <input class="label-edit" id="movie_trailer" name="movie_trailer" type="url" class="validate" value="{{movie.movie_trailer}}">
             <label for="email_inline">URL</label>
             <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
           </div>
@@ -102,7 +104,7 @@
        <div class="col s12">
         
         <form> 
-         <button class="btn waves-effect waves-light pulse" type="submit" name="action">Update
+         <button class="btn waves-effect waves-light pulse view-moviebtn" type="submit" name="action">Update
            <i class="material-icons right">fiber_new</i>
          </button>
               
@@ -115,8 +117,8 @@
        <div class="col s12 mb-3">
        
        <form action="{{ url_for('view_movie', movie_id=movie._id) }}"> 
-         <button class="btn waves-effect waves-light ">Back to Movie
-           <i class="material-icons right">apps</i>
+         <button class="btn waves-effect waves-light back-moviebtn">Back to Movie
+           <i class="material-icons right btn-i">apps</i>
          </button>
            </form>
 

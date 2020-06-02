@@ -10,21 +10,21 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form method="POST" action="{{url_for('signup')}}">
-                            <h3 class="text-center text-info">Sign up</h3>
+                            <h3 class="text-center text-info login-heading">Sign up</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="userid">
+                                <input type="text" class="text-login" name="userid">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="password" name="password">
+                                <input type="password" class="text-login" name="password">
                             </div>
                             <select name="type">
                 <option value="admin">Admin</option>
                 <option value="user">User</option>
             </select>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Sign up">
+                                <input type="submit" name="submit" class="btn button-login btn-info btn-md " value="Sign up">
                             </div>
                             
                         </form>
