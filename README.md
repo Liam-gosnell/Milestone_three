@@ -16,7 +16,7 @@ There is a robust non-relational database schema hosted on MongoDB.
 
 # Demo 
 
-A live demo can be found [here]().
+A live demo can be found [here](http://cinematicbase.herokuapp.com/).
 
 # UX
 <hr>
