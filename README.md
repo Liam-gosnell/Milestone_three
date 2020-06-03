@@ -67,6 +67,7 @@ A live demo can be found [here]().
 
 ### Wireframes
 
+![About wireframe](https://raw.githubusercontent.com/Liam-gosnell/Milestone_three/master/wireframes/milestone3.pdf "About wireframe")
 
 
 # Features
@@ -86,7 +87,7 @@ touch and adds credibility to the site. <p>
 #### Search Box
 
 <p>For good UX design I decided to have a minimal search interface on the index page. 
-I used Python to programme how this would search the database. <p>
+I used Python to programe how this would search the database. <p>
 
 #### Bootstrap and Materialize
 
@@ -95,11 +96,19 @@ I also used materialize for the forms and icons as we were shown in our tutorial
 to repeat the same 3 pattern over and over for addition of new movies.</p>
 
 
-#### Register and Login using 
+#### Register and Login using passlib.hash
 
 <p>
+I based my login and register around passlib.hash to create authentication for the site.
+It works well with the site and was easy to implement.
+</p>
 
+#### Jinja Templating
 
+<p>
+I used Jinja templating to create a base.html page with navbar and footer that would
+ensure a standardised aesthetic across the site. I also used the templating to print data from the database 
+(i.e. within 'edit movie' the previous input is displayed in the form) and create if and for loops that continued to personalise the user's experience.
 </p>
 
 
@@ -109,6 +118,8 @@ to repeat the same 3 pattern over and over for addition of new movies.</p>
 <p>It would be a goal of mine  to obtain mailing data from the user in order to have a mailing list with new and featured Movies.</p>
 
 <p>It would be highly likely that pagination would be required as the database grows.</p>
+
+<p>I would like to have the users be able to edit/delete/add for only their page</p>
 
 <p>It could be possible to allow users to comment on movies, creating more of a community ethos.</p>
 
@@ -146,7 +157,7 @@ to repeat the same 3 pattern over and over for addition of new movies.</p>
 
 ##### Liberaries
 
-* [JQUERY]() - JavaScript library used to make custom-code for the site which allows for DOM manipulation
+* [JQuery](https://jquery.com/) - JavaScript library used to make custom-code for the site which allows for DOM manipulation
 * [Material Icons](https://material.io/resources/icons/?style=baseline) - used for links and icons to make the site more appealing
 
 
@@ -167,6 +178,26 @@ I used Chrome Developer Tools to ensure that my site was responsive and
 functioned in all screen sizes and that my styling was applied appropriately throughout.</p>
 
 <p>I had several users log in and out of the website searching, adding, editing and deleting (CRUD) the movies.</p>
+
+<p>I have tested the website on:</p>
+
+* Google Chrome
+* Apple Safari
+* Internet Explorer
+* Mozilla Firefox
+
+<h4>Devices</h4>
+
+* Iphone X
+* Iphone 8
+* Iphone 6/7
+* iPad 
+* iPad Pro
+* Pixel
+* Pixel 2XL
+* Galaxy Note 3
+* Kindle fire XDH
+* Galaxy s5
 
 #### Responsiveness
 
@@ -191,6 +222,87 @@ key in the database and therefore can't have duplicates. I will continue to look
 <p>I had an issue with the users profile page when logging in. Once the user was logged , it would redirect to the users profile page that would display
 the users name. But I had trouble getting the exact text template to make that possible. I had got errors saying that the user was undefined.</p>
 
+<p>There was a security issue related to the app.py view where the database string was returned in the URL.
+ This could enable users to find and access the database. I quickly fixed the URL parameter to be the user._id rather than users._id.</p>
 
+
+# Deployment
+
+### How to install CinematicBase
+
+1. From your terminal enter git clone https://github.com/Liam-gosnell/Milestone_three to clone the project and download to your IDE
+
+2. Set up your Virtual Environment Variables
+
+* this can be done by creating folder named .venv to hold your variables and importing them into your app.py
+* this can be done in your IDE bash terminal - e.g. cd .. to your root directory and type nano.bashrc and type in your important environment variables
+
+3. You should now install the requirements by typing $ pip3 -r install requirements.txt
+
+4. You will also have to create your own database to get full functionality from the project. MongoDB is free and easy to use.
+
+* I created Three collections in my Database:
+ 1. Movies
+ 2. Users
+ 3. Categories
+
+
+### How to Deploy your site
+
+<p>I committed my code to GitHub at regular intervals. I am now using git more often, making sure to give detailed commit messages as I know it provides version control.</p>
+
+1. In order to deploy the site to Heroku, you must create a Procfile and requirements.txt. These will tell Heroku how to run your app.
+
+* To create a Procfile - echo web: python (your filename).py > Procfile
+* To create a requirements.txt - pip3 freeze --local > requirements.txt
+
+2. Next, log into Heroku and set up the remote.
+ * heroku login
+ * then enter details
+
+3. You then need to setup your Heroku Enivronment Variables and you can do this in two ways, either through the terminal or by navigating to Heroku.
+
+4. On navigating to the Heroku website, log in and select your app from the dashoboard.
+
+5. Choose settings and click on 'Reveal Config Vars' and insert the environment variables that are essential for your project to run. For example,
+   "IP - 0.0.0.0 PORT - 8080 MONGO_URI - mongodb+srv://rootyour password@myfirstcluster-ug8tc.mongodb.net/your database?retryWrites=true DB_NAME - your database name SECRET KEY - create a secret key"
+
+6. You should then send your committed code to Heroku using git push heroku master and view your deployed site on the URL provided within your Heroku dashboard.
+
+### Differences between Development and Deployed version
+
+<p>I set the debug to false for deployment.</p>
+
+
+# Credits
+
+### Content
+<p>Information about the movies were taken from<a href="https://www.imdb.com/">IMBD</a></p>
+
+
+### Media
+
+<p>All photos in the background images are taken from <a href="https://unsplash.com/">Unsplash</a>, a stock image library.
+The video on the about page was taken from <a href="https://coverr.co/search?q=movies">Coverr</a>, a video library. The movie images on the index page 
+were taken from google images.
+</p>
+
+<p><a href="https://materializecss.com/">Materialize</a> - I used this to format the form elements and for icons.</p>
+
+
+<p><a href="https://www.w3schools.com/">W3schools</a> - I used this to ensure I was entering all the information required correctly on my HTML 
+and CSS and even for helping me with the functions on JavaScript.</p>
+
+<p>The youtube trailers videos on the view movie
+were taken from <a href="https://www.youtube.com/">Youtube</a>.</p>
+
+
+### Acknowledgements
+
+<p>I used Ian Lunn's Hover for my navbar link hover effects. I have clearly marked the borrowed code in my CSS.</p>
+
+<p>I used <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout">CSS grid </a> for the .wrapper layout for the movies on the index page. </p>
+
+<p>Throughout this project I have sought support and guidance from Stack-Overflow, Code-Institue Slack Community, Tutors, W3Schools, CSS Tricks, YouTube videos.</p>
 
 
