@@ -19,6 +19,10 @@ h3 {
     padding: 0;
 }
 
+.back-moviebtn{
+    margin-bottom: 60px!important;
+}
+
 /* home */
 
 .section-home {
@@ -301,6 +305,8 @@ nav .brand-logo {
     margin-top: 45px;
 }
 
+
+
 .hamburger{
     display: block!important;
     font-size: 90px!important;
@@ -509,7 +515,7 @@ input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), i
 
 }
 .card-signin{
-    height: 50vh;
+    height: 56vh;
 }
 
 .login-p{
@@ -725,7 +731,4 @@ h1{
 }
 
 
-
-
-/* dashboard */
 
