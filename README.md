@@ -226,7 +226,6 @@ the users name. But I had trouble getting the exact text template to make that p
 <p>There was a security issue related to the app.py view where the database string was returned in the URL.
  This could enable users to find and access the database. I quickly fixed the URL parameter to be the user._id rather than users._id.</p>
 
- <p>There is a bug when you press the login button without entering anything.</p>
 
 
 # Deployment
@@ -281,6 +280,8 @@ the users name. But I had trouble getting the exact text template to make that p
 
 ### Content
 <p>Information about the movies were taken from<a href="https://www.imdb.com/">IMBD</a></p>
+
+<p>Fpr The dashboard page I used the basic layout from <a href="https://startbootstrap.com/themes/sb-admin-2/">Bootstrap</a></p>
 
 
 ### Media
