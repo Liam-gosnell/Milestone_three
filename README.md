@@ -67,7 +67,8 @@ A live demo can be found [here]().
 
 ### Wireframes
 
-![About wireframe](https://raw.githubusercontent.com/Liam-gosnell/Milestone_three/master/wireframes/milestone3.pdf "About wireframe")
+![Wireframe pdf](https://raw.githubusercontent.com/Liam-gosnell/Milestone_three/master/wireframes/milestone3.pdf "About wireframe")
+![Wireframe pdf](https://raw.githubusercontent.com/Liam-gosnell/Milestone_three/master/wireframes/milestone3.1.pdf "About wireframe")
 
 
 # Features
