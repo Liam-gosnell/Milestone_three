@@ -226,6 +226,8 @@ the users name. But I had trouble getting the exact text template to make that p
 <p>There was a security issue related to the app.py view where the database string was returned in the URL.
  This could enable users to find and access the database. I quickly fixed the URL parameter to be the user._id rather than users._id.</p>
 
+ <p>There is a bug when you press the login button without entering anything.</p>
+
 
 # Deployment
 
