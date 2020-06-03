@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = "mysecretkeyonly"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
@@ -127,7 +127,7 @@ def view_movie(movie_id):
     return render_template('viewmovie.html', movie=movie)
 
 @app.route('/edit_movie/<movie_id>')
-
+@check_logged_in
 def edit_movie(movie_id):
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     all_categories = mongo.db.categories.find()
@@ -166,6 +166,7 @@ def search_movie():
     return render_template('searchresult.html', results=results) 
 
 @app.route('/dashboard')
+@check_logged_in
 def dashboard():
     username = session['user-name']
     user = mongo.db.users.find_one({'username': username })
@@ -174,7 +175,7 @@ def dashboard():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'mysecretkeyonly'
+    
     app.run(host=os.environ.get('IP', '0.0.0.0'),
             port=int(os.environ.get('PORT', '5000')),
             debug=False)
