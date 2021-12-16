@@ -171,8 +171,6 @@ def dashboard():
     username = session['user-name']
     user = mongo.db.users.find_one({'username': username })
     return render_template("dashboard.html", user=user)
-    
-
 
 if __name__ == '__main__':
     
